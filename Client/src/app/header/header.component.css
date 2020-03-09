@@ -38,7 +38,8 @@
 .music__item {
   font-size: 40px;
   line-height: 47px;
-  border-right: 1px solid white;
+  border-right: 1px solid #F2F2F2;
+
   padding-right: 10px;
 
 }
