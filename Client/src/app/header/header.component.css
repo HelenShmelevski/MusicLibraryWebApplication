@@ -1,9 +1,10 @@
 .header-wrapper {
-  padding-top: 20px;
+  /*padding-top: 20px;*/
   display: flex;
   align-items: center;
   height: 100%;
   color: white;
+  margin-bottom: 86px;
   /*justify-content: space-between;*/
   /*height: 100%;*/
 }
@@ -30,12 +31,13 @@
 .logo__item {
 
   margin-right: 10px;
-  font-size: 18px;
+  font-size: 25px;
+  line-height: 29px;
 }
 
 .music__item {
-  font-size: 30px;
-  line-height: normal;
+  font-size: 40px;
+  line-height: 47px;
   border-right: 1px solid white;
   padding-right: 10px;
 
@@ -43,13 +45,21 @@
 
 .menu__item {
   margin-right: 15px;
-  font-size: 21px;
+  font-size: 25px;
+  line-height: 29px;
 }
 
 .header-button-wrapper {
   display: flex;
   justify-content: center;
   height: 100%;
-  font-size: 21px;
+  font-size: 25px;
+  line-height: 29px;
   margin-left: 100px;
+}
+
+
+.menu__item:hover {
+  text-decoration: underline solid white;
+  cursor: pointer;
 }
