@@ -1,0 +1,11 @@
+.table-wrapper {
+  background-color: white;
+}
+.color {
+  background: #373A3C;
+  color: #FFF4F4;
+  font-size: 25px;
+  line-height: 29px;
+  border: 1px solid white;
+  border-collapse: collapse;
+}
