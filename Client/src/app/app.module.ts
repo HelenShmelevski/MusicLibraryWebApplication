@@ -6,14 +6,10 @@ import { HeaderComponent } from './header/header.component';
 import {NgModule} from '@angular/core';
 import { TableMusicComponent } from './table-music/table-music.component';
 import { TableTracksComponent } from './table-tracks/table-tracks.component';
-import {Routes, RouterModule} from '@angular/router';
+// import {Routes, RouterModule} from '@angular/router';
 import { TableGenreComponent } from './table-genre/table-genre.component';
 
-const appRoutes: Routes =  [
-  {path: 'track', component: TableTracksComponent },
-  {path: '', component: TableMusicComponent},
-  {path: 'genre', component: TableGenreComponent}
-] ;
+
 
 @NgModule({
   declarations: [
@@ -27,7 +23,6 @@ const appRoutes: Routes =  [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
