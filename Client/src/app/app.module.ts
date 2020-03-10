@@ -7,10 +7,12 @@ import {NgModule} from '@angular/core';
 import { TableMusicComponent } from './table-music/table-music.component';
 import { TableTracksComponent } from './table-tracks/table-tracks.component';
 import {Routes, RouterModule} from '@angular/router';
+import { TableGenreComponent } from './table-genre/table-genre.component';
 
 const appRoutes: Routes =  [
   {path: 'track', component: TableTracksComponent },
-  {path: '', component: TableMusicComponent}
+  {path: '', component: TableMusicComponent},
+  {path: 'genre', component: TableGenreComponent}
 ] ;
 
 @NgModule({
@@ -18,7 +20,9 @@ const appRoutes: Routes =  [
     AppComponent,
     HeaderComponent,
     TableMusicComponent,
-    TableTracksComponent
+    TableTracksComponent,
+    TableGenreComponent,
+    TableGenreComponent
   ],
   imports: [
     BrowserModule,
