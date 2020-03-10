@@ -48,6 +48,7 @@
   margin-right: 15px;
   font-size: 25px;
   line-height: 29px;
+
 }
 
 .header-button-wrapper {
@@ -60,7 +61,13 @@
 }
 
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .menu__item:hover {
   text-decoration: underline solid white;
   cursor: pointer;
+
+
 }
