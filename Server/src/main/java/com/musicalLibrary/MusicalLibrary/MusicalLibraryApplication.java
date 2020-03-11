@@ -1,13 +1,11 @@
-package MusicLibrary;
+package com.musicalLibrary.MusicalLibrary;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MusicLibraryWebApplication {
-
+public class MusicalLibraryApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(MusicLibraryWebApplication.class, args);
+		SpringApplication.run(MusicalLibraryApplication.class, args);
 	}
-
 }
