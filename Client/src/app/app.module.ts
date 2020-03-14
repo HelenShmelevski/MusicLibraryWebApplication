@@ -9,6 +9,7 @@ import { TableTracksComponent } from './table-tracks/table-tracks.component';
 // import {Routes, RouterModule} from '@angular/router';
 import { TableGenreComponent } from './table-genre/table-genre.component';
 import { AuthComponent } from './auth/auth.component';
+import { BtnComponent } from './btn/btn.component';
 
 
 
@@ -20,7 +21,8 @@ import { AuthComponent } from './auth/auth.component';
     TableTracksComponent,
     TableGenreComponent,
     TableGenreComponent,
-    AuthComponent
+    AuthComponent,
+    BtnComponent
   ],
   imports: [
     BrowserModule,
