@@ -5,11 +5,12 @@
 }
 
 .btn-wrapper {
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  /*height: 100%;*/
 }
 
 .btn {
-
+  margin-right: 24px;
 }
+

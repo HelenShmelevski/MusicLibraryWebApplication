@@ -9,3 +9,8 @@
   border: 1px solid white;
   border-collapse: collapse;
 }
+.table-body:hover {
+  background: #C8A35F; /* Цвет фона при наведении */
+  color: #fff;
+}
+
