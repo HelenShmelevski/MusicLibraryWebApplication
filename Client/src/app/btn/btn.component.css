@@ -1,3 +1,9 @@
+.btn-wr {
+  position: absolute;
+  right: 0;
+  width: 600px;
+}
+
 .btn-wrapper {
   display: flex;
   justify-content: space-between;
