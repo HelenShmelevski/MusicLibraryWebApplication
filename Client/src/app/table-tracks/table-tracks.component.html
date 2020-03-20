@@ -1,81 +1,108 @@
 <div class="table-wrapper">
-  <table class="table">
+  <table class="table table-striped">
     <thead>
-    <tr class="color">
-      <th scope="col" class="fix">Id</th>
-      <th scope="col" class="fix">Имя артиста</th>
-      <th scope="col" class="fix">Название</th>
-      <th scope="col" class="fix">Жанр</th>
-      <th scope="col" class="fix">Длительность</th>
+    <tr class="color" >
+      <th class="fix">Id</th>
+      <th class="fix">Имя артиста</th>
+      <th class="fix">Название</th>
+      <th class="fix">Жанр</th>
+      <th class="fix">Длительность</th>
+
     </tr>
     </thead>
     <tbody>
-    <tr class="table-body">
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-
-    </tr>
-    <tr class="table-body">
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@mdo</td>
-
-    </tr>
-    <tr class="table-body">
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td>@mdo</td>
-
-    </tr>
-    <tr class="table-body">
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@mdo</td>
-
-    </tr>
-    <tr class="table-body">
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@mdo</td>
-
-    </tr>
-    <tr class="table-body">
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@mdo</td>
-
-    </tr>
-    <tr class="table-body">
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@mdo</td>
-
-    </tr>
-    <tr class="table-body">
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@mdo</td>
-
+    <tr class="table-body" *ngFor="let item of items">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.title}}</td>
+      <td>{{item.genre}}</td>
+      <td>{{item.duration}}</td>
+      <!--    <td><input type="checkbox" [(ngModel)]="item.done" /></td>-->
     </tr>
     </tbody>
   </table>
-
 </div>
+
+
+<!--<div class="table-wrapper">-->
+<!--  <table class="table">-->
+<!--    <thead>-->
+<!--    <tr class="color">-->
+<!--      <th scope="col" class="fix">Id</th>-->
+<!--      <th scope="col" class="fix">Имя артиста</th>-->
+<!--      <th scope="col" class="fix">Название</th>-->
+<!--      <th scope="col" class="fix">Жанр</th>-->
+<!--      <th scope="col" class="fix">Длительность</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr class="table-body">-->
+<!--      <th scope="row">1</th>-->
+<!--      <td>Mark</td>-->
+<!--      <td>Otto</td>-->
+<!--      <td>@mdo</td>-->
+<!--      <td>@mdo</td>-->
+
+<!--    </tr>-->
+<!--    <tr class="table-body">-->
+<!--      <th scope="row">2</th>-->
+<!--      <td>Jacob</td>-->
+<!--      <td>Thornton</td>-->
+<!--      <td>@fat</td>-->
+<!--      <td>@mdo</td>-->
+
+<!--    </tr>-->
+<!--    <tr class="table-body">-->
+<!--      <th scope="row">3</th>-->
+<!--      <td>Larry</td>-->
+<!--      <td>the Bird</td>-->
+<!--      <td>@twitter</td>-->
+<!--      <td>@mdo</td>-->
+
+<!--    </tr>-->
+<!--    <tr class="table-body">-->
+<!--      <th scope="row">2</th>-->
+<!--      <td>Jacob</td>-->
+<!--      <td>Thornton</td>-->
+<!--      <td>@fat</td>-->
+<!--      <td>@mdo</td>-->
+
+<!--    </tr>-->
+<!--    <tr class="table-body">-->
+<!--      <th scope="row">2</th>-->
+<!--      <td>Jacob</td>-->
+<!--      <td>Thornton</td>-->
+<!--      <td>@fat</td>-->
+<!--      <td>@mdo</td>-->
+
+<!--    </tr>-->
+<!--    <tr class="table-body">-->
+<!--      <th scope="row">2</th>-->
+<!--      <td>Jacob</td>-->
+<!--      <td>Thornton</td>-->
+<!--      <td>@fat</td>-->
+<!--      <td>@mdo</td>-->
+
+<!--    </tr>-->
+<!--    <tr class="table-body">-->
+<!--      <th scope="row">2</th>-->
+<!--      <td>Jacob</td>-->
+<!--      <td>Thornton</td>-->
+<!--      <td>@fat</td>-->
+<!--      <td>@mdo</td>-->
+
+<!--    </tr>-->
+<!--    <tr class="table-body">-->
+<!--      <th scope="row">2</th>-->
+<!--      <td>Jacob</td>-->
+<!--      <td>Thornton</td>-->
+<!--      <td>@fat</td>-->
+<!--      <td>@mdo</td>-->
+
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+
+<!--</div>-->
+
 <app-btn></app-btn>
