@@ -24,12 +24,12 @@ class Item {
 export class TableTracksComponent  {
   items: Item[] =
     [
-      {id: 5,  name: 'Хлеб', title: 'Хлеб', genre: '15.9', duration: 5 },
-      {id: 10,  name: 'Масло', title: 'Хлеб', genre: 'dnjksd',duration: 5 },
-      {id: 5,  name: 'Картофель', title: 'Хлеб', genre: 'ifh' ,duration: 5},
-      {id: 9,  name: 'Сыр', title: 'Хлеб', genre: 'dhi',duration: 5 },
-      {id: 9,  name: 'Сыр', title: 'Хлеб', genre: 'dhi',duration: 5 },
-      {id: 9,  name: 'Сыр', title: 'Хлеб', genre: 'dhi',duration: 5 },
+      {id: 5,  name: 'Билан', title: 'Любовная любовь', genre: 'Pop', duration: 2 },
+      {id: 10,  name: 'Монатик', title: 'Кружит голову', genre: 'Pop',duration: 5 },
+      {id: 5,  name: 'Rammstein', title: 'DEUTSCHLAND', genre: 'Rock' ,duration: 5},
+      {id: 9,  name: 'Joji', title: 'Window', genre: 'dhi',duration: 5 },
+      {id: 9,  name: 'Монатик', title: 'Кружит голову', genre: 'dhi',duration: 5 },
+      {id: 10,  name: 'Сыр', title: 'Хлеб', genre: 'dhi',duration: 5 },
       {id: 9,  name: 'Сыр', title: 'Хлеб', genre: 'dhi',duration: 5 }
     ];
 
