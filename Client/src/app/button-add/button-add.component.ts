@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./button-add.component.css']
 })
 export class ButtonAddComponent implements OnInit {
-
+  a : boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addArtist() {
+    this.a = true;
   }
 
 }

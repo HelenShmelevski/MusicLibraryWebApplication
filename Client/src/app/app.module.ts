@@ -15,6 +15,8 @@ import {FormsModule} from "@angular/forms";
 import { ButtonAddComponent } from './button-add/button-add.component';
 import { ButtonDeleteComponent } from './button-delete/button-delete.component';
 import { ButtonChangeComponent } from './button-change/button-change.component';
+import { AddTrackComponent } from './add-track/add-track.component';
+import { AddGenreComponent } from './add-genre/add-genre.component';
 
 
 
@@ -31,7 +33,9 @@ import { ButtonChangeComponent } from './button-change/button-change.component';
     AddArtistComponent,
     ButtonAddComponent,
     ButtonDeleteComponent,
-    ButtonChangeComponent
+    ButtonChangeComponent,
+    AddTrackComponent,
+    AddGenreComponent
   ],
   imports: [
     BrowserModule,
