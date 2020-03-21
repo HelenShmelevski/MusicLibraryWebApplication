@@ -10,6 +10,11 @@ import { TableTracksComponent } from './table-tracks/table-tracks.component';
 import { TableGenreComponent } from './table-genre/table-genre.component';
 import { AuthComponent } from './auth/auth.component';
 import { BtnComponent } from './btn/btn.component';
+import { AddArtistComponent } from './add-artist/add-artist.component';
+import {FormsModule} from "@angular/forms";
+import { ButtonAddComponent } from './button-add/button-add.component';
+import { ButtonDeleteComponent } from './button-delete/button-delete.component';
+import { ButtonChangeComponent } from './button-change/button-change.component';
 
 
 
@@ -22,11 +27,16 @@ import { BtnComponent } from './btn/btn.component';
     TableGenreComponent,
     TableGenreComponent,
     AuthComponent,
-    BtnComponent
+    BtnComponent,
+    AddArtistComponent,
+    ButtonAddComponent,
+    ButtonDeleteComponent,
+    ButtonChangeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
