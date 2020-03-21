@@ -2,6 +2,7 @@
   height: 400px;
   background-color: white;
   overflow: auto;
+  margin-bottom: 20px;
 }
 .fix {
   position: sticky;

@@ -30,6 +30,9 @@ export class TableTracksComponent  {
       {id: 9,  name: 'Joji', title: 'Window', genre: 'dhi',duration: 5 },
       {id: 9,  name: 'Монатик', title: 'Кружит голову', genre: 'dhi',duration: 5 },
       {id: 10,  name: 'Сыр', title: 'Хлеб', genre: 'dhi',duration: 5 },
+      {id: 9,  name: 'Сыр', title: 'Хлеб', genre: 'dhi',duration: 5 },
+      {id: 9,  name: 'Сыр', title: 'Хлеб', genre: 'dhi',duration: 5 },
+      {id: 9,  name: 'Сыр', title: 'Хлеб', genre: 'dhi',duration: 5 },
       {id: 9,  name: 'Сыр', title: 'Хлеб', genre: 'dhi',duration: 5 }
     ];
 

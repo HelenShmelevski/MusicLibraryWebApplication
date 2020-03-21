@@ -4,7 +4,7 @@
   align-items: center;
   height: 100%;
   color: white;
-  margin-bottom: 86px;
+  margin-bottom: 44px;
   /*justify-content: space-between;*/
   /*height: 100%;*/
 }
@@ -67,6 +67,11 @@ a {
 .menu__item:hover {
   text-decoration: underline solid white;
   cursor: pointer;
+}
+
+.active {
+  text-decoration: underline solid white;
+
 
 }
 #rectangle {
