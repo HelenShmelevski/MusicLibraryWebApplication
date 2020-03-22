@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AddTrackService} from "../addTrack.service";
 
 @Component({
   selector: 'app-add-genre',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddGenreComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

@@ -18,6 +18,7 @@ import { ButtonChangeComponent } from './button-change/button-change.component';
 import { AddTrackComponent } from './add-track/add-track.component';
 import { AddGenreComponent } from './add-genre/add-genre.component';
 import {AddArtistServise} from "./addArtist.servise";
+import {AddTrackService} from "./addTrack.service";
 
 
 
@@ -43,7 +44,7 @@ import {AddArtistServise} from "./addArtist.servise";
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [AddArtistServise],
+  providers: [AddArtistServise, AddTrackService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
