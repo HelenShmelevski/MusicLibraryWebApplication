@@ -17,6 +17,7 @@ import { ButtonDeleteComponent } from './button-delete/button-delete.component';
 import { ButtonChangeComponent } from './button-change/button-change.component';
 import { AddTrackComponent } from './add-track/add-track.component';
 import { AddGenreComponent } from './add-genre/add-genre.component';
+import {AddArtistServise} from "./addArtist.servise";
 
 
 
@@ -42,7 +43,7 @@ import { AddGenreComponent } from './add-genre/add-genre.component';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AddArtistServise],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

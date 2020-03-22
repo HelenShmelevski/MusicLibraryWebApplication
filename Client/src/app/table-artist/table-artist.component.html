@@ -9,15 +9,16 @@
     </tr>
     </thead>
     <tbody>
-    <tr class="table-body" *ngFor="let item of items">
-      <td>{{item.id}}</td>
-      <td>{{item.name}}</td>
-      <td>{{item.genre}}</td>
+    <tr class="table-body" *ngFor="let artist of artists">
+      <td>{{artist.id}}</td>
+      <td>{{artist.name}}</td>
+      <td>{{artist.genre}}</td>
       <!--    <td><input type="checkbox" [(ngModel)]="item.done" /></td>-->
     </tr>
     </tbody>
   </table>
 </div>
+<button type="button" class="btn btn-light" routerLink='/add_artist' >Добавить</button>
 
 
 
@@ -86,4 +87,3 @@
 <!--</div>-->
 
 <!--<app-btn></app-btn>-->
-<button type="button" class="btn btn-light" routerLink='/add_artist' >Добавить</button>

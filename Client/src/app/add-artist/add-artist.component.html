@@ -1,23 +1,33 @@
 <div class="wrapper">
   <div class="form-group">
+    <p>Новый Id</p>
+    <input class="form-control" [(ngModel)]="artistId" placeholder="Введите id">
+    <!--           [(ngModel)]="title" -->
+  </div>
+
+  <div class="form-group">
     <p>Новый артист</p>
-    <input class="form-control"  placeholder="Введите имя артиста">
+    <input class="form-control" [(ngModel)]="artistName" placeholder="Введите имя артиста">
 <!--           [(ngModel)]="title" -->
   </div>
+
   <div class="form-group">
-    <input  class="form-control"  placeholder="Введите страну">
+    <input class="form-control"  [(ngModel)]="artistGenre" placeholder="Введите жанр">
+    <!--    <select class="form-control" [(ngModel)]="artistGenre" >-->
+    <!--&lt;!&ndash;            [(ngModel)]="company">&ndash;&gt;-->
+    <!--      <option > rock </option>-->
+    <!--      <option > jazz </option>-->
+    <!--      <option > pop </option>-->
+    <!--    </select>-->
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-light" (click)="addArtist()">Добавить</button>
+    <!--            (click)="addPhone()"-->
+  </div>
+<!--  <div class="form-group">-->
+<!--    <input  class="form-control"  placeholder="Введите страну">-->
 <!--           [(ngModel)]="price" -->
   </div>
-  <div class="form-group">
-    <select class="form-control"  >
-<!--            [(ngModel)]="company">-->
-      <option > rock </option>
-      <option > jazz </option>
-      <option > pop </option>
-    </select>
-  </div>
-  <div class="form-group">
-    <button class="btn btn-light" >Добавить</button>
-<!--            (click)="addPhone()"-->
-  </div>
-</div>
+
+
