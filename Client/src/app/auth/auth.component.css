@@ -5,42 +5,15 @@
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
+  background-color: #2F343A;
 
 }
 
-
-.card {
-  background-color: #fff;
-  box-shadow: 1px 1px 5px rgba(126, 142, 159, .1);
-  margin-bottom: 10px;
-  border-radius: 0;
-  border: none;
-  display:block;
-  font-family:"Open Sans", sans-serif;
-  font-size:16px;
-  height:435.275px;
-  line-height:24px;
-
-  position:relative;
-
-  width:450px;
+label {
+  color: white;
 }
 
 
-.auth-content {
-  color: rgb(79, 95, 111);
-  display: block;
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  height: 364px;
-  line-height: 24px;
-  min-height: 260px;
-  padding-bottom: 30px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 30px;
-  /*text-size-adjust: 100%;*/
-  width:450px;
+.btn {
+  float: right;
 }
-
-
