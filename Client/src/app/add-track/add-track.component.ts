@@ -7,21 +7,21 @@ import {AddTrackService} from "../addTrack.service";
   styleUrls: ['./add-track.component.css']
 })
 export class AddTrackComponent implements OnInit {
-  trackId = 0;
+  trackId ;
   trackName = '';
   trackTitle = '';
   trackGenre = '';
-  trackDuration = 5;
+  trackDuration ;
 
   constructor(private addtrack : AddTrackService) { }
 
   addTrack() {
     this.addtrack.addTrack(this.trackId, this.trackName, this.trackTitle, this.trackGenre, this.trackDuration);
-    this.trackId = 0;
+    this.trackId ;
     this.trackName = '';
     this.trackTitle = '';
     this.trackGenre ='';
-    this.trackDuration = 5;
+    this.trackDuration;
   }
   ngOnInit(): void {
 
