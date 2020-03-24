@@ -18,6 +18,12 @@
         id="password"
         formControlName="password">
     </div>
+
+    <span class="form-help-text" *ngIf="form.get('email').invalid &&
+    form.get('email').touched">
+
+    </span>
+
     <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
