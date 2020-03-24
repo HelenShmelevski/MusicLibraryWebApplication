@@ -17,3 +17,7 @@ label {
 .btn {
   float: right;
 }
+
+.form-help-text  {
+  color: red;
+}
