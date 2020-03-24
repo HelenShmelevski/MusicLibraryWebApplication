@@ -18,6 +18,7 @@ import { AddTrackComponent } from './add-track/add-track.component';
 import { AddGenreComponent } from './add-genre/add-genre.component';
 import {AddArtistServise} from "./addArtist.servise";
 import {AddTrackService} from "./addTrack.service";
+import {AuthModule} from "./auth/auth.module";
 
 
 
@@ -41,6 +42,7 @@ import {AddTrackService} from "./addTrack.service";
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    AuthModule
   ],
   providers: [AddArtistServise, AddTrackService],
   bootstrap: [AppComponent]
