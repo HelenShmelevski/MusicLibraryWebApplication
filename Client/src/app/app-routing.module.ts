@@ -8,10 +8,10 @@ import {AddTrackComponent} from "./add-track/add-track.component";
 import {AddGenreComponent} from "./add-genre/add-genre.component";
 
 
-const itemRoutes: Routes = [
-  { path: 'add_artist', component:  AddArtistComponent}
-
-];
+// const itemRoutes: Routes = [
+//   { path: 'add_artist', component:  AddArtistComponent}
+//
+// ];
 
 const routes: Routes = [
   {path: 'track', component: TableTracksComponent  },
@@ -19,7 +19,9 @@ const routes: Routes = [
   {path: 'genre', component: TableGenreComponent},
   {path: 'add_artist', component:  AddArtistComponent},
   {path: 'add_track', component: AddTrackComponent},
-  {path: 'add_genre', component: AddGenreComponent}
+  {path: 'add_genre', component: AddGenreComponent},
+  { path: 'add_artist', component:  AddArtistComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 
 @NgModule({

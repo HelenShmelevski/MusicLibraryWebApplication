@@ -22,6 +22,7 @@ import {AuthModule} from "./auth/auth.module";
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import {AuthModule} from "./auth/auth.module";
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AuthModule
+    AuthModule,
+
   ],
   providers: [AddArtistServise, AddTrackService],
   bootstrap: [AppComponent]
