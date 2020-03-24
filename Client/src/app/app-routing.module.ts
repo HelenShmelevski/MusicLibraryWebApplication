@@ -14,13 +14,12 @@ import {AddGenreComponent} from "./add-genre/add-genre.component";
 // ];
 
 const routes: Routes = [
-  {path: 'track', component: TableTracksComponent  },
-  {path: 'artist', component: TableArtistComponent},
-  {path: 'genre', component: TableGenreComponent},
+  {path: 'tracks', component: TableTracksComponent  },
+  {path: 'artists', component: TableArtistComponent},
+  {path: 'genres', component: TableGenreComponent},
   {path: 'add_artist', component:  AddArtistComponent},
   {path: 'add_track', component: AddTrackComponent},
   {path: 'add_genre', component: AddGenreComponent},
-  { path: 'add_artist', component:  AddArtistComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 

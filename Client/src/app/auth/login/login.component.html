@@ -6,18 +6,21 @@
     >
       <label for="email">Email address</label>
       <input
+        placeholder="Введите email"
         type="email"
         class="form-control"
         id="email"
         aria-describedby="emailHelp"
         formControlName="email">
-    </div>
 
-    <span class="form-help-text" *ngIf="form.get('email').invalid &&
+      <span class="form-help-text" *ngIf="form.get('email').invalid &&
     form.get('email').touched">
     <span *ngIf="form.get('email')['errors']['required']">Email не может быть пустым</span>
       <span *ngIf="form.get('email')['errors']['email']">Введите корректный email</span>
     </span>
+
+    </div>
+
 
 
 
@@ -26,33 +29,38 @@
          form.get('password').touched}">
       <label for="password">Password</label>
       <input
+        placeholder="Введите пароль"
         type="password"
         class="form-control"
         id="password"
         formControlName="password">
-    </div>
 
-    <span class="form-help-text" *ngIf="form.get('password').invalid &&
+      <span class="form-help-text" *ngIf="form.get('password').invalid &&
     form.get('password').touched">
     <span class="form-help-text" *ngIf="form.get('email')['errors']['required']">Пароль не может быть пустым</span>
 
-      <span class="form-help-text" *ngIf="form.get('password')['errors']['minlength']">
+      <span class="form-help-text" *ngIf="form.get('password')['errors']['minlength'] && form.get('password')['errors']['minlength']['requiredLength']">
         Пароль должен быть больше
         {{form.get('password')['errors']['minlength']['requiredLength']}} символов.
         Сейчас {{form.get('password')['errors']['minlength']['actualLength']}}
       </span>
     </span>
 
-
-
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
+
     <button type="submit"
             class="btn btn-primary"
             [disabled]=" form.invalid"
     >Submit</button>
+
+    <div class="form-group">
+      <p class="text-muted text-xl-center">
+        Нет аккаунта?
+        <a [routerLink]="'/registration'" >
+         Зарегистрироваться!
+        </a>
+      </p>
+    </div>
   </form>
 </div>
 

@@ -1,24 +1,87 @@
 <div class="auth-container">
-  <form>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="exampleInputEmail1">Name</label>
-      <input type="text" class="form-control">
-      <small  class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <label for="name">Name</label>
+      <input
+        placeholder="Введите имя"
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name">
+
+      <span class="form-help-text"
+      *ngIf="form.get('name').invalid &&
+      form.get('name').touched">
+      Имя не может быть пустым
+      </span>
     </div>
+
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <label for="email1">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email1"
+        aria-describedby="emailHelp"
+        placeholder="Введите email"
+        formControlName="email">
+
+      <span class="form-help-text" *ngIf="form.get('email').invalid &&
+    form.get('email').touched">
+    <span *ngIf="form.get('email')['errors']['required']">Email не может быть пустым</span>
+      <span *ngIf="form.get('email')['errors']['email']">Введите корректный email</span>
+    </span>
+
     </div>
+
+
+
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="password">Password</label>
+      <input
+        placeholder="Введите пароль"
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="password">
+
+      <span class="form-help-text" *ngIf="form.get('password').invalid &&
+    form.get('password').touched">
+    <span class="form-help-text" *ngIf="form.get('email')['errors']['required']">Пароль не может быть пустым</span>
+
+      <span class="form-help-text" *ngIf="form.get('password')['errors']['minlength'] && form.get('password')['errors']['minlength']['requiredLength']">
+        Пароль должен быть больше
+        {{form.get('password')['errors']['minlength']['requiredLength']}} символов.
+        Сейчас {{form.get('password')['errors']['minlength']['actualLength']}}
+      </span>
+    </span>
+
     </div>
+
+
     <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="agree"
+        formControlName="agree">
+      <label class="form-check-label" for="agree">Согласен с правилами</label>
     </div>
-    <button type="submit" class="btn btn-primary">registration</button>
+
+    <button type="submit"
+            class="btn btn-primary"
+            [disabled]="form.invalid"
+    >Зарегистрироваться</button>
+
+    <div class="form-group">
+      <p class="text-muted text-xl-center">
+        Уже есть аккаунт?
+        <a [routerLink]="'/login'" >
+          Войти!
+        </a>
+      </p>
+    </div>
+
   </form>
 </div>
 
