@@ -11,7 +11,7 @@ export class AddTrackComponent implements OnInit {
   trackName = '';
   trackTitle = '';
   trackGenre = '';
-  trackDuration ;
+  trackDuration = 0;
 
   constructor(private addtrack : AddTrackService) { }
 
@@ -21,7 +21,7 @@ export class AddTrackComponent implements OnInit {
     this.trackName = '';
     this.trackTitle = '';
     this.trackGenre ='';
-    this.trackDuration;
+    this.trackDuration = 0;
   }
   ngOnInit(): void {
 
