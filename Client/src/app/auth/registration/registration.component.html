@@ -48,7 +48,6 @@
       <span class="form-help-text" *ngIf="form.get('password').invalid &&
     form.get('password').touched">
     <span class="form-help-text" *ngIf="form.get('email')['errors']['required']">Пароль не может быть пустым</span>
-
       <span class="form-help-text" *ngIf="form.get('password')['errors']['minlength'] && form.get('password')['errors']['minlength']['requiredLength']">
         Пароль должен быть больше
         {{form.get('password')['errors']['minlength']['requiredLength']}} символов.
