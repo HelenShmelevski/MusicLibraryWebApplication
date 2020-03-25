@@ -30,7 +30,6 @@ export class TableArtistComponent implements OnInit {
     this.artists = this.addart.artists;
   }
 
-  // showButton() {}
   // items: Item[] =
   //   [
   //     {id: 5,  name: 'Билан',genre: 'dhi' },

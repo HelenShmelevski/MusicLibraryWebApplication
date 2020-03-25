@@ -19,6 +19,7 @@ import { AddGenreComponent } from './add-genre/add-genre.component';
 import {AddArtistServise} from "./addArtist.servise";
 import {AddTrackService} from "./addTrack.service";
 import {AuthModule} from "./auth/auth.module";
+import {AddGenreServise} from "./addGenre.servise";
 
 
 
@@ -46,7 +47,7 @@ import {AuthModule} from "./auth/auth.module";
     AuthModule,
 
   ],
-  providers: [AddArtistServise, AddTrackService],
+  providers: [AddArtistServise, AddTrackService, AddGenreServise],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

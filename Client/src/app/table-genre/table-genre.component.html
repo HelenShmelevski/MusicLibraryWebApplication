@@ -1,7 +1,7 @@
 <div class="table-wrapper">
   <table class="table table-striped">
     <thead>
-    <tr class="color" >
+    <tr class="color">
       <th class="fix">Id</th>
       <th class="fix">Название</th>
       <th class="fix">Имя Артиста</th>
@@ -9,10 +9,10 @@
     </tr>
     </thead>
     <tbody>
-    <tr class="table-body" *ngFor="let item of items">
-      <td>{{item.id}}</td>
-      <td>{{item.title}}</td>
-      <td>{{item.name}}</td>
+    <tr class="table-body" *ngFor="let genre of genres">
+      <td>{{genre.id}}</td>
+      <td>{{genre.title}}</td>
+      <td>{{genre.name}}</td>
 
       <!--    <td><input type="checkbox" [(ngModel)]="item.done" /></td>-->
     </tr>
@@ -20,7 +20,7 @@
   </table>
 </div>
 
-<button type="button" class="btn btn-light" routerLink='/add_genre' >Добавить</button>
+<button type="button" class="btn btn-light" routerLink='/add_genre'>Добавить</button>
 
 
 <!--<div class="table-wrapper">-->

@@ -1,12 +1,12 @@
 <div class="wrapper">
   <div class="form-group">
     <p>Новый жанр</p>
-    <input class="form-control" placeholder="Введите название жанра">
+    <input class="form-control" placeholder="Введите название жанра" [(ngModel)]="genreTitle">
     <!--           [(ngModel)]="title" -->
   </div>
   <p>Введите имя артиста</p>
   <div class="form-group">
-    <select class="form-control"  >
+    <select class="form-control" [(ngModel)]="genreName" >
       <!--            [(ngModel)]="company">-->
       <option > Билан </option>
       <option > Монатик </option>
@@ -14,7 +14,7 @@
     </select>
   </div>
   <div class="form-group">
-    <button class="btn btn-light" >Добавить</button>
+    <button class="btn btn-light" (click)="addGenre()">Добавить</button>
     <!--            (click)="addPhone()"-->
   </div>
 </div>

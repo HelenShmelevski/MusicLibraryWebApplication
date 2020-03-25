@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AddArtistServise} from "../addArtist.servise";
+import {AddGenreServise} from "../addGenre.servise";
 
-class Item {
-  id: number;
-  title: string;
-  name: string;
+// class Item {
+//   id: number;
+//   title: string;
+//   name: string;
+// constructor(id: number,  title: string, name: string) {
+//   this.id = id;
+//   this.title = title;
+//   this.name = name;
+//
+// }
 
-
-  constructor(id: number,  title: string, name: string) {
-    this.id = id;
-    this.title = title;
-    this.name = name;
-
-  }
-}
 
 @Component({
   selector: 'app-table-genre',
@@ -20,20 +20,26 @@ class Item {
   styleUrls: ['./table-genre.component.css']
 })
 export class TableGenreComponent implements OnInit {
+  genres = [
+  ];
 
-  constructor() { }
+  constructor(private addgen: AddGenreServise) {
+  }
+
 
   ngOnInit(): void {
+    this.genres = this.addgen.genres;
   }
-  items: Item[] =
-    [
-      {id: 5, title: 'Pop', name: 'Билан' },
-      {id: 10, title: 'Rock' ,name: 'Rammstein'},
-      {id: 5, title: 'Jazz' ,name: 'Картофель'},
-      {id: 9, title: 'Хлеб', name: 'Сыр' },
-      {id: 9, title: 'Хлеб', name: 'Сыр' },
-      {id: 10, title: 'Хлеб', name: 'Сыр' },
-      {id: 9, title: 'Хлеб', name: 'Сыр' }
-    ];
+
+  // items: Item[] =
+  //   [
+  //     {id: 5, title: 'Pop', name: 'Билан' },
+  //     {id: 10, title: 'Rock' ,name: 'Rammstein'},
+  //     {id: 5, title: 'Jazz' ,name: 'Картофель'},
+  //     {id: 9, title: 'Хлеб', name: 'Сыр' },
+  //     {id: 9, title: 'Хлеб', name: 'Сыр' },
+  //     {id: 10, title: 'Хлеб', name: 'Сыр' },
+  //     {id: 9, title: 'Хлеб', name: 'Сыр' }
+  //   ];
 
 }

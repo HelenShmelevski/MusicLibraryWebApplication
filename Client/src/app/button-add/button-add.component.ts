@@ -15,5 +15,7 @@ export class ButtonAddComponent implements OnInit {
   addArtist() {
     this.a = true;
   }
-
+  addGenre() {
+    this.a = true;
+  }
 }
