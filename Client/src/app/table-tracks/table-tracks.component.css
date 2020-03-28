@@ -23,4 +23,9 @@
   background: #C8A35F; /* Цвет фона при наведении */
   color: #fff;
 }
+.table-body { cursor: pointer; }
+
+.table-striped tbody tr:focus {
+  background-color: #C8A35F;
+}
 
