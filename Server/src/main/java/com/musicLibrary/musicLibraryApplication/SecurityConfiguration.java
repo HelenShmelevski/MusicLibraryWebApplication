@@ -1,4 +1,4 @@
-package com.musicalLibrary.MusicalLibrary;
+package com.musicLibrary.musicLibraryApplication;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,6 +12,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     //Disable auth
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.authorizeRequests().antMatchers("/").permitAll();
+        httpSecurity.authorizeRequests().antMatchers("/**").permitAll().and().csrf().disable();
     }
 }

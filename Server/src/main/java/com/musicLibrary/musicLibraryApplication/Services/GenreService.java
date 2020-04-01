@@ -1,19 +1,19 @@
-package com.musicalLibrary.MusicalLibrary.services;
+package com.musicLibrary.musicLibraryApplication.Services;
 
-import com.musicalLibrary.MusicalLibrary.execeptions.ResourceNotFoundException;
-import com.musicalLibrary.MusicalLibrary.models.Genre;
-import com.musicalLibrary.MusicalLibrary.repositories.genre.GenreRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.musicLibrary.musicLibraryApplication.Exceptions.ResourceNotFoundException;
+import com.musicLibrary.musicLibraryApplication.Models.Genre;
+import com.musicLibrary.musicLibraryApplication.Repositories.IGenreRepository;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
-@Transactional
 public class GenreService implements IGenreService {
-    @Autowired
-    private GenreRepository genreRepository;
+    private final IGenreRepository genreRepository;
+
+    public GenreService(IGenreRepository genreRepository) {
+        this.genreRepository = genreRepository;
+    }
 
     @Override
     public Genre[] getAllGenre() {
@@ -33,7 +33,7 @@ public class GenreService implements IGenreService {
 
     @Override
     public void addGenre(Genre genre) {
-        this.genreRepository.save(genre);
+        this.genreRepository.saveAndFlush(genre);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class GenreService implements IGenreService {
 
         if (updatedGenre.isPresent()) {
             Genre genre = updatedGenre.get();
-            genre.setGenreId(newGenre.getGenreId());
+            //genre.setGenreId(newGenre.getGenreId());
             genre.setTitle(newGenre.getTitle());
             genreRepository.save(genre);
         } else {

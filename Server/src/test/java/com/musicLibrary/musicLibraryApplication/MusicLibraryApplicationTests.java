@@ -1,10 +1,10 @@
-package com.musicalLibrary.MusicalLibrary;
+package com.musicLibrary.musicLibraryApplication;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MusicalLibraryApplicationTests {
+class MusicLibraryApplicationTests {
 
 	@Test
 	void contextLoads() {

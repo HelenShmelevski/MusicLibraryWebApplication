@@ -1,6 +1,7 @@
-package com.musicalLibrary.MusicalLibrary.services;
+package com.musicLibrary.musicLibraryApplication.Services;
 
-import com.musicalLibrary.MusicalLibrary.models.Genre;
+
+import com.musicLibrary.musicLibraryApplication.Models.Genre;
 
 public interface IGenreService {
     Genre[] getAllGenre();
