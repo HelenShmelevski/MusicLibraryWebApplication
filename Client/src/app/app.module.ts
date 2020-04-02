@@ -8,12 +8,8 @@ import { TableArtistComponent } from './table-artist/table-artist.component';
 import { TableTracksComponent } from './table-tracks/table-tracks.component';
 // import {Routes, RouterModule} from '@angular/router';
 import { TableGenreComponent } from './table-genre/table-genre.component';
-import { BtnComponent } from './btn/btn.component';
 import { AddArtistComponent } from './add-artist/add-artist.component';
 import {FormsModule} from "@angular/forms";
-import { ButtonAddComponent } from './button-add/button-add.component';
-import { ButtonDeleteComponent } from './button-delete/button-delete.component';
-import { ButtonChangeComponent } from './button-change/button-change.component';
 import { AddTrackComponent } from './add-track/add-track.component';
 import { AddGenreComponent } from './add-genre/add-genre.component';
 import {AddArtistServise} from "./addArtist.servise";
@@ -32,11 +28,7 @@ import {AddGenreServise} from "./addGenre.servise";
     TableTracksComponent,
     TableGenreComponent,
     TableGenreComponent,
-    BtnComponent,
     AddArtistComponent,
-    ButtonAddComponent,
-    ButtonDeleteComponent,
-    ButtonChangeComponent,
     AddTrackComponent,
     AddGenreComponent
   ],
