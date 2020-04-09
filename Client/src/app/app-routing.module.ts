@@ -17,9 +17,9 @@ const routes: Routes = [
   {path: 'tracks', component: TableTracksComponent  },
   {path: 'artists', component: TableArtistComponent},
   {path: 'genres', component: TableGenreComponent},
-  {path: 'add_artist', component:  AddArtistComponent},
-  {path: 'add_track', component: AddTrackComponent},
-  {path: 'add_genre', component: AddGenreComponent},
+  {path: 'add-artist', component:  AddArtistComponent},
+  {path: 'add-track', component: AddTrackComponent},
+  {path: 'add-genre', component: AddGenreComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'}
 ];
 
