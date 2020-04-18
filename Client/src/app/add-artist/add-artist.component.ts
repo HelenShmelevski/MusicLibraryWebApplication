@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AddArtistServise} from "../addArtist.servise";
+import {CreateService} from "../services/create.service";
 
 @Component({
   selector: 'app-add-artist',
@@ -12,13 +12,13 @@ export class AddArtistComponent implements OnInit {
   artistName = '';
   artistGenre = '';
 
-  constructor(private addart: AddArtistServise) { }
+  constructor(private createService: CreateService) { }
 
   ngOnInit(): void {
   }
 
   addArtist() {
-    this.addart.addArtist(this.artistId,this.artistName,this.artistGenre);
+    this.createService.addArtist(this.artistId,this.artistName,this.artistGenre);
     this.artistName = '';
     this.artistId = 0;
     this.artistGenre = '';

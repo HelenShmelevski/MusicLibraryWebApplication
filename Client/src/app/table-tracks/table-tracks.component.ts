@@ -1,5 +1,5 @@
-import { Component} from '@angular/core';
-import {AddTrackService} from "../addTrack.service";
+import {Component} from '@angular/core';
+import {CreateService} from "../services/create.service";
 
 
 @Component({
@@ -7,17 +7,18 @@ import {AddTrackService} from "../addTrack.service";
   templateUrl: './table-tracks.component.html',
   styleUrls: ['./table-tracks.component.css']
 })
-export class TableTracksComponent  {
+export class TableTracksComponent {
 
   tracks = [];
-  constructor(private addTrack: AddTrackService ) {
+
+  constructor(private createService: CreateService) {
   }
 
 
   ngOnInit(): void {
-    this.tracks = this.addTrack.tracks;
-  }
+    this.tracks = this.createService.tracks;
 
+  }
 
 
 }

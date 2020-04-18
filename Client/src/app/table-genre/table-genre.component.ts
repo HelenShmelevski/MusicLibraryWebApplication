@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AddArtistServise} from "../addArtist.servise";
-import {AddGenreServise} from "../addGenre.servise";
+import {CreateService} from "../services/create.service";
 
 // class Item {
 //   id: number;
@@ -20,26 +19,14 @@ import {AddGenreServise} from "../addGenre.servise";
   styleUrls: ['./table-genre.component.css']
 })
 export class TableGenreComponent implements OnInit {
-  genres = [
-  ];
+  genres = [];
 
-  constructor(private addgen: AddGenreServise) {
+  constructor(private createService: CreateService) {
   }
 
 
   ngOnInit(): void {
-    this.genres = this.addgen.genres;
+    this.genres = this.createService.genres;
   }
-
-  // items: Item[] =
-  //   [
-  //     {id: 5, title: 'Pop', name: 'Билан' },
-  //     {id: 10, title: 'Rock' ,name: 'Rammstein'},
-  //     {id: 5, title: 'Jazz' ,name: 'Картофель'},
-  //     {id: 9, title: 'Хлеб', name: 'Сыр' },
-  //     {id: 9, title: 'Хлеб', name: 'Сыр' },
-  //     {id: 10, title: 'Хлеб', name: 'Сыр' },
-  //     {id: 9, title: 'Хлеб', name: 'Сыр' }
-  //   ];
 
 }

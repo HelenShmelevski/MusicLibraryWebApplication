@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AddTrackService} from "../addTrack.service";
+import {CreateService} from "../services/create.service";
 
 @Component({
   selector: 'app-add-track',
@@ -13,10 +13,10 @@ export class AddTrackComponent implements OnInit {
   trackGenre = '';
   trackDuration = 0;
 
-  constructor(private addtrack : AddTrackService) { }
+  constructor(private createService : CreateService) { }
 
   addTrack() {
-    this.addtrack.addTrack(this.trackId, this.trackName, this.trackTitle, this.trackGenre, this.trackDuration);
+    this.createService.addTrack(this.trackId, this.trackName, this.trackTitle, this.trackGenre, this.trackDuration);
     this.trackId ;
     this.trackName = '';
     this.trackTitle = '';

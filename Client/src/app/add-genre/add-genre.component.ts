@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AddTrackService} from "../addTrack.service";
-import {AddArtistServise} from "../addArtist.servise";
-import {AddGenreServise} from "../addGenre.servise";
+import {CreateService} from "../services/create.service";
 
 @Component({
   selector: 'app-add-genre',
@@ -13,13 +11,13 @@ export class AddGenreComponent implements OnInit {
   genreTitle = '';
   genreName = '';
 
-  constructor(private addgen: AddGenreServise) { }
+  constructor(private createService: CreateService) { }
 
   ngOnInit(): void {
   }
 
   addGenre() {
-    this.addgen.addGenre(this.genreId,this.genreTitle,this.genreName);
+    this.createService.addGenre(this.genreId,this.genreTitle,this.genreName);
     this.genreName = '';
     this.genreId = 0;
     this.genreTitle = '';

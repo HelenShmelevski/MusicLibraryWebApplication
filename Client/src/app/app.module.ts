@@ -12,12 +12,8 @@ import { AddArtistComponent } from './add-artist/add-artist.component';
 import {FormsModule} from "@angular/forms";
 import { AddTrackComponent } from './add-track/add-track.component';
 import { AddGenreComponent } from './add-genre/add-genre.component';
-import {AddArtistServise} from "./addArtist.servise";
-import {AddTrackService} from "./addTrack.service";
+import {CreateService} from "./services/create.service";
 import {AuthModule} from "./auth/auth.module";
-import {AddGenreServise} from "./addGenre.servise";
-
-
 
 
 @NgModule({
@@ -39,7 +35,7 @@ import {AddGenreServise} from "./addGenre.servise";
     AuthModule,
 
   ],
-  providers: [AddArtistServise, AddTrackService, AddGenreServise],
+  providers: [CreateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
