@@ -5,19 +5,33 @@
       <th class="fix">Id</th>
       <th class="fix">Имя артиста</th>
       <th class="fix">Жанр</th>
+      <th class="fix">ID</th>
 
     </tr>
     </thead>
     <tbody>
-    <tr tabindex="0" class="table-body" *ngFor="let artist of artists">
-      <td>{{artist.id}}</td>
+<!--    <tr tabindex="0" class="table-body" *ngFor="let artist of artists">-->
+<!--      <td>{{artist.id}}</td>-->
+<!--      <td>{{artist.name}}</td>-->
+<!--      <td>{{artist.genre}}</td>-->
+<!--      &lt;!&ndash;    <td><input type="checkbox" [(ngModel)]="item.done" /></td>&ndash;&gt;-->
+<!--    </tr>-->
+
+    <tr tabindex="0" class="table-body" *ngFor="let artist of artists" >
       <td>{{artist.name}}</td>
       <td>{{artist.genre}}</td>
+      <td>{{artist.country}}</td>
+      <td>{{artist.id}}</td>
       <!--    <td><input type="checkbox" [(ngModel)]="item.done" /></td>-->
     </tr>
+
+
+
+
     </tbody>
   </table>
 </div>
+<button (click)="getArtists()">dgsherhehtrjrhtr</button>
 <button type="button" class="btn btn-light" routerLink='/add-artist' >Добавить</button>
 
 

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule }   from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -14,6 +14,7 @@ import { AddTrackComponent } from './add-track/add-track.component';
 import { AddGenreComponent } from './add-genre/add-genre.component';
 import {CreateService} from "./services/create.service";
 import {AuthModule} from "./auth/auth.module";
+import {GetService} from "./get.service";
 
 
 @NgModule({
@@ -33,9 +34,10 @@ import {AuthModule} from "./auth/auth.module";
     AppRoutingModule,
     FormsModule,
     AuthModule,
+    HttpClientModule
 
   ],
-  providers: [CreateService],
+  providers: [CreateService, GetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
