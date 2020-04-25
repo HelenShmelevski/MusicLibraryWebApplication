@@ -1,4 +1,14 @@
+import {HttpClientModule} from '@angular/common/http';
+import {Injectable} from "@angular/core";
+import {Observable} from "rxjs";
+
+@Injectable()
 export class CreateService {
+
+  constructor(private http: HttpClientModule) {
+
+  }
+
   artists = [
     {
       id: 12,
@@ -81,6 +91,9 @@ export class CreateService {
     }
   ];
 
+  //getAllArtist(http: HttpClientModule) : Observable<ArtistDTO>{
+   // return this.http.get('http://localhost:82/artists');
+ // }
 
   addArtist(id: number, name: string, genre: string) {
     this.artists.push({id, name, genre});
