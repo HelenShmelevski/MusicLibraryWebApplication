@@ -1,7 +1,7 @@
 <div class="table-wrapper">
   <table class="table table-striped">
     <thead>
-    <tr class="color" >
+    <tr class="color">
       <th class="fix">Id</th>
       <th class="fix">Имя артиста</th>
       <th class="fix">Жанр</th>
@@ -18,72 +18,8 @@
     </tbody>
   </table>
 </div>
-<button type="button" class="btn btn-light" routerLink='/add-artist' >Добавить</button>
+<button (click)="getArtists()">Получаю данные</button>
+
+<button type="button" class="btn btn-light" routerLink='/add-artist'>Добавить</button>
 
 
-
-  <!--<table class="table"(click)="showButton()">-->
-<!--  <table class="table">-->
-<!--    <thead>-->
-<!--    <tr class="color">-->
-<!--      <th scope="col" class="fix">Id</th>-->
-<!--      <th scope="col" class="fix">Имя артиста</th>-->
-<!--      <th scope="col" class="fix">Жанр</th>-->
-<!--      <th scope="col" class="fix">Страна</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <tr class="table-body" >-->
-<!--      <th scope="row">1</th>-->
-<!--      <td>Mark</td>-->
-<!--      <td>Otto</td>-->
-<!--      <td>@mdo</td>-->
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">2</th>-->
-<!--      <td>Jacob</td>-->
-<!--      <td>Thornton</td>-->
-<!--      <td>@fat</td>-->
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">3</th>-->
-<!--      <td>Larry</td>-->
-<!--      <td>the Bird</td>-->
-<!--      <td>@twitter</td>-->
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">3</th>-->
-<!--      <td>Larry</td>-->
-<!--      <td>the Bird</td>-->
-<!--      <td>@twitter</td>-->
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">3</th>-->
-<!--      <td>Larry</td>-->
-<!--      <td>the Bird</td>-->
-<!--      <td>@twitter</td>-->
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">3</th>-->
-<!--      <td>Larry</td>-->
-<!--      <td>the Bird</td>-->
-<!--      <td>@twitter</td>-->
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">3</th>-->
-<!--      <td>Larry</td>-->
-<!--      <td>the Bird</td>-->
-<!--      <td>@twitter</td>-->
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">3</th>-->
-<!--      <td>Larry</td>-->
-<!--      <td>the Bird</td>-->
-<!--      <td>@twitter</td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--  </table>-->
-
-<!--</div>-->
-
-<!--<app-btn></app-btn>-->

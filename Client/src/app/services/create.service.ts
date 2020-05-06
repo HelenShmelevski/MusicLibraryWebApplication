@@ -5,37 +5,11 @@ import {Observable} from "rxjs";
 @Injectable()
 export class CreateService {
 
-  constructor(private http: HttpClientModule) {
+  // constructor(private http: HttpClientModule) {
+  //
+  // }
 
-  }
-
-  artists = [
-    {
-      id: 12,
-      name: 'Билан',
-      genre: 'pop'
-    },
-    {
-      id: 12,
-      name: 'sgreg',
-      genre: 'hdthd'
-    },
-    {
-      id: 12,
-      name: 'rgrh',
-      genre: 'pop'
-    },
-    {
-      id: 12,
-      name: 'hthtnt',
-      genre: 'pop'
-    },
-    {
-      id: 12,
-      name: 'Билан',
-      genre: 'pop'
-    }
-  ];
+  artists = [];
   genres = [
     {
       id: 1,
@@ -92,8 +66,8 @@ export class CreateService {
   ];
 
   //getAllArtist(http: HttpClientModule) : Observable<ArtistDTO>{
-   // return this.http.get('http://localhost:82/artists');
- // }
+  // return this.http.get('http://localhost:82/artists');
+  // }
 
   addArtist(id: number, name: string, genre: string) {
     this.artists.push({id, name, genre});
