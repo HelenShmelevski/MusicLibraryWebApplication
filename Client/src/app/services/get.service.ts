@@ -1,26 +1,25 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpResponse, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {ArtistModel} from "../../dto/artist.model";
-import {Observable} from "rxjs";
+import {GenreModel} from "../../dto/genre.model";
+import {TrackModel} from "../../dto/track.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetService {
-  // url1 = 'http://localhost:82/artists';
-  constructor(private http: HttpClient) {
-  }
-
-//  url = '/artists';
-  // getArtists() {
-  //   return this.http.get<ArtistsModel[]>("https://artists")
-  //   // return this.http.get<ArtistsModel[]>('assets/artists.json')
-  // }
+  constructor(private http: HttpClient) {}
 
   getArtists() {
-    // return this.http.get<ArtistModel[]>(this.url1);
+    return this.http.get<ArtistModel[]>('http://localhost:84/artists/');
+  }
 
-    return this.http.get<ArtistModel[]>('http://localhost:82/artists/');
+  getGenres() {
+    return this.http.get<GenreModel[]>('http://localhost:84/genres/');
+  }
+
+  getTracks() {
+    return this.http.get<TrackModel[]>('http://localhost:84/tracks/');
   }
 
 }

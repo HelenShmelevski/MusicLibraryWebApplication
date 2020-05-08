@@ -5,6 +5,7 @@ import com.musicLibrary.musicLibraryApplication.Services.GenreService;
 import com.musicLibrary.musicLibraryApplication.dto.GenreDTO;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/genres")
 public class GenreController {

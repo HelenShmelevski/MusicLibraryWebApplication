@@ -3,105 +3,24 @@
     <thead>
     <tr class="color" >
       <th class="fix">Id</th>
-      <th class="fix">Имя артиста</th>
       <th class="fix">Название</th>
-      <th class="fix">Жанр</th>
-      <th class="fix">Длительность</th>
+      <th class="fix">Артист</th>
+      <th class="fix">Альбом</th>
+      <th class="fix">Дата релиза</th>
 
     </tr>
     </thead>
     <tbody>
     <tr tabindex="0" class="table-body" *ngFor="let track of tracks">
-      <td>{{track.id}}</td>
-      <td>{{track.name}}</td>
+      <td>{{track.trackId}}</td>
       <td>{{track.title}}</td>
-      <td>{{track.genre}}</td>
-      <td>{{track.duration}}</td>
+      <td>{{track.name}}</td>
+      <td>{{track.album}}</td>
+      <td>{{track.dateRelease}}</td>
     </tr>
     </tbody>
   </table>
 </div>
 <button type="button" class="btn btn-light" [routerLink]="'/add-track'" >Добавить</button>
 
-<!--<div class="table-wrapper">-->
-<!--  <table class="table">-->
-<!--    <thead>-->
-<!--    <tr class="color">-->
-<!--      <th scope="col" class="fix">Id</th>-->
-<!--      <th scope="col" class="fix">Имя артиста</th>-->
-<!--      <th scope="col" class="fix">Название</th>-->
-<!--      <th scope="col" class="fix">Жанр</th>-->
-<!--      <th scope="col" class="fix">Длительность</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">1</th>-->
-<!--      <td>Mark</td>-->
-<!--      <td>Otto</td>-->
-<!--      <td>@mdo</td>-->
-<!--      <td>@mdo</td>-->
 
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">2</th>-->
-<!--      <td>Jacob</td>-->
-<!--      <td>Thornton</td>-->
-<!--      <td>@fat</td>-->
-<!--      <td>@mdo</td>-->
-
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">3</th>-->
-<!--      <td>Larry</td>-->
-<!--      <td>the Bird</td>-->
-<!--      <td>@twitter</td>-->
-<!--      <td>@mdo</td>-->
-
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">2</th>-->
-<!--      <td>Jacob</td>-->
-<!--      <td>Thornton</td>-->
-<!--      <td>@fat</td>-->
-<!--      <td>@mdo</td>-->
-
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">2</th>-->
-<!--      <td>Jacob</td>-->
-<!--      <td>Thornton</td>-->
-<!--      <td>@fat</td>-->
-<!--      <td>@mdo</td>-->
-
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">2</th>-->
-<!--      <td>Jacob</td>-->
-<!--      <td>Thornton</td>-->
-<!--      <td>@fat</td>-->
-<!--      <td>@mdo</td>-->
-
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">2</th>-->
-<!--      <td>Jacob</td>-->
-<!--      <td>Thornton</td>-->
-<!--      <td>@fat</td>-->
-<!--      <td>@mdo</td>-->
-
-<!--    </tr>-->
-<!--    <tr class="table-body">-->
-<!--      <th scope="row">2</th>-->
-<!--      <td>Jacob</td>-->
-<!--      <td>Thornton</td>-->
-<!--      <td>@fat</td>-->
-<!--      <td>@mdo</td>-->
-
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--  </table>-->
-
-<!--</div>-->
-
-<!--<app-btn></app-btn>-->

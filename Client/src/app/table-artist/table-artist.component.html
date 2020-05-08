@@ -4,21 +4,21 @@
     <tr class="color">
       <th class="fix">Id</th>
       <th class="fix">Имя артиста</th>
-      <th class="fix">Жанр</th>
+      <th class="fix">Страна</th>
 
     </tr>
     </thead>
     <tbody>
     <tr tabindex="0" class="table-body" *ngFor="let artist of artists">
-      <td>{{artist.id}}</td>
+      <td>{{artist.artistId}}</td>
       <td>{{artist.name}}</td>
-      <td>{{artist.genre}}</td>
-      <!--    <td><input type="checkbox" [(ngModel)]="item.done" /></td>-->
+      <td>{{artist.country}}</td>
+
     </tr>
     </tbody>
   </table>
 </div>
-<button (click)="getArtists()">Получаю данные</button>
+
 
 <button type="button" class="btn btn-light" routerLink='/add-artist'>Добавить</button>
 

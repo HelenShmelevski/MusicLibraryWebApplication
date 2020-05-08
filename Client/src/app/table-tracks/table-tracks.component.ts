@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
-import {CreateService} from "../services/create.service";
+import {Component, OnInit} from '@angular/core';
+import {GetService} from "../services/get.service";
+import {TrackModel} from "../../dto/track.model";
 
 
 @Component({
@@ -7,19 +8,25 @@ import {CreateService} from "../services/create.service";
   templateUrl: './table-tracks.component.html',
   styleUrls: ['./table-tracks.component.css']
 })
-export class TableTracksComponent {
+export class TableTracksComponent implements OnInit {
+  tracks: TrackModel[] = [];
 
-  tracks = [];
-
-  constructor(private createService: CreateService) {
+  constructor(private getService: GetService) {
   }
 
 
   ngOnInit(): void {
-    this.tracks = this.createService.tracks;
+    this.getTracks();
 
   }
 
+  getTracks() {
+    this.getService.getTracks()
+      .subscribe(data => {
+        console.log(data);
+        this.tracks = data;
+      });
+  }
 
 }
 

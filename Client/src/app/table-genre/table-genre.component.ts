@@ -1,16 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {CreateService} from "../services/create.service";
+import {GetService} from "../services/get.service";
+import {TrackModel} from "../../dto/track.model";
+import {GenreModel} from "../../dto/genre.model";
 
-// class Item {
-//   id: number;
-//   title: string;
-//   name: string;
-// constructor(id: number,  title: string, name: string) {
-//   this.id = id;
-//   this.title = title;
-//   this.name = name;
-//
-// }
+
 
 
 @Component({
@@ -19,14 +12,23 @@ import {CreateService} from "../services/create.service";
   styleUrls: ['./table-genre.component.css']
 })
 export class TableGenreComponent implements OnInit {
-  genres = [];
+  genres: GenreModel[] = [];
 
-  constructor(private createService: CreateService) {
-  }
-
+  constructor( private getService: GetService) {}
 
   ngOnInit(): void {
-    this.genres = this.createService.genres;
+    this.getGenres();
   }
+
+  getGenres() {
+    this.getService.getGenres()
+      .subscribe(data => {
+        console.log(data);
+        this.genres = data;
+      });
+  }
+
+
+
 
 }

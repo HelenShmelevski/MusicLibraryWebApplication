@@ -11,12 +11,16 @@ import {ArtistModel} from "../../dto/artist.model";
 })
 
 export class TableArtistComponent implements OnInit {
-  // artists = [];
+
 
   artists: ArtistModel[] = [];
 
 
-  constructor(private createService: CreateService, private getService: GetService) {
+  // constructor(private createService: CreateService, private getService: GetService) {
+  // }
+
+
+  constructor( private getService: GetService) {
   }
 
   ngOnInit(): void {
