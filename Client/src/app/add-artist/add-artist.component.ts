@@ -17,12 +17,12 @@ export class AddArtistComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addArtist() {
-    this.createService.addArtist(this.artistId,this.artistName,this.artistGenre);
-    this.artistName = '';
-    this.artistId = 0;
-    this.artistGenre = '';
-
-  }
+  // addArtist() {
+  //   this.createService.addArtist(this.artistId,this.artistName,this.artistGenre);
+  //   this.artistName = '';
+  //   this.artistId = 0;
+  //   this.artistGenre = '';
+  //
+  // }
 
 }

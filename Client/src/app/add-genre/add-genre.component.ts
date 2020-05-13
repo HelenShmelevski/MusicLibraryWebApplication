@@ -16,12 +16,12 @@ export class AddGenreComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addGenre() {
-    this.createService.addGenre(this.genreId,this.genreTitle,this.genreName);
-    this.genreName = '';
-    this.genreId = 0;
-    this.genreTitle = '';
-
-  }
+  // addGenre() {
+  //   this.createService.addGenre(this.genreId,this.genreTitle,this.genreName);
+  //   this.genreName = '';
+  //   this.genreId = 0;
+  //   this.genreTitle = '';
+  //
+  // }
 
 }

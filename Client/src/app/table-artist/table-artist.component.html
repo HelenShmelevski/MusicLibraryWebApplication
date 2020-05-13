@@ -4,6 +4,7 @@
     <tr class="color">
       <th class="fix">Id</th>
       <th class="fix">Имя артиста</th>
+      <th class="fix">Жанр</th>
       <th class="fix">Страна</th>
 
     </tr>
@@ -12,8 +13,8 @@
     <tr tabindex="0" class="table-body" *ngFor="let artist of artists">
       <td>{{artist.artistId}}</td>
       <td>{{artist.name}}</td>
+      <td>{{artist.genre}}</td>
       <td>{{artist.country}}</td>
-
     </tr>
     </tbody>
   </table>
