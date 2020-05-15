@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {CreateService} from "../services/create.service";
 import {GetService} from "../services/get.service";
 import {ArtistModel} from "../../dto/artist.model";
+import {DeleteService} from "../services/delete.service";
 
 
 @Component({
@@ -20,7 +21,7 @@ export class TableArtistComponent implements OnInit {
   // }
 
 
-  constructor( private getService: GetService) {
+  constructor( private getService: GetService, private deleteService: DeleteService) {
   }
 
   ngOnInit(): void {
@@ -36,6 +37,16 @@ export class TableArtistComponent implements OnInit {
         console.log(data);
         this.artists = data;
       });
+  }
+
+  deleteArtist (id: number) {
+    this.deleteService.deleteArtist(id)
+      .subscribe(data => {
+        // const data = response.json();
+        console.log(data);
+        this.artists = data;
+      });
+
   }
 
 }

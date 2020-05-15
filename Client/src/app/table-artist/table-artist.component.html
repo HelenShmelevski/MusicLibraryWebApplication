@@ -11,7 +11,7 @@
     </thead>
     <tbody>
     <tr tabindex="0" class="table-body" *ngFor="let artist of artists">
-      <td>{{artist.artistId}}</td>
+      <td (click)="deleteArtist(artist.artistId)">{{artist.artistId}}</td>
       <td>{{artist.name}}</td>
       <td>{{artist.genre}}</td>
       <td>{{artist.country}}</td>
@@ -23,5 +23,7 @@
 
 <button type="button" class="btn btn-light" routerLink='/add-artist'>Добавить</button>
 <button type="button" class="btn btn-light" routerLink='/add-artist'>Изменить</button>
+<!--<button type="button" class="btn btn-light" (click)="deleteArtist($event)">Удалить</button>-->
 
 
+<!--<button ng-click="deleteArtist(artist)">remove</button>-->
