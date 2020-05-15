@@ -16,6 +16,7 @@ import {CreateService} from "./services/create.service";
 import {AuthModule} from "./auth/auth.module";
 import {HttpClientModule} from '@angular/common/http';
 import {GetService} from "./services/get.service";
+import {ChangeService} from "./services/change.service";
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import {GetService} from "./services/get.service";
     HttpClientModule
 
   ],
-  providers: [CreateService, GetService],
+  providers: [CreateService, GetService, ChangeService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

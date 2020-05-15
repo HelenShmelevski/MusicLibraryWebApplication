@@ -1,7 +1,7 @@
 export class TrackModel {
-  trackId?: string;
+ // trackId?: string;
   title?: string;
-  name?: string;
+ // name?: string;
   //album?: string;
  // dateRelease?: string;
 
