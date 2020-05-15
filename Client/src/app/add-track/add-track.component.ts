@@ -13,7 +13,7 @@ import {GetService} from "../services/get.service";
 })
 
 export class AddTrackComponent {
-  tracks: TrackModel[] = [];
+  //tracks: TrackModel[] = [];
   // trackId;
   // trackName: string = '';
   // trackTitle: string = '';
@@ -30,9 +30,9 @@ export class AddTrackComponent {
   addTrack() {
     this.createService.addTrack(this.track)
       .subscribe(
-        (data: TrackModel) => {
-          this.receivedTrack = data;
-          console.log(data);
+        (track: TrackModel) => {
+          this.receivedTrack = track;
+          console.log(track);
           this.done = true;
         },
         error => console.log(error)
