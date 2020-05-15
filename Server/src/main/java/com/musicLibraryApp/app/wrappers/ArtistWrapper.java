@@ -7,7 +7,6 @@ import java.util.List;
 public class ArtistWrapper {
     private String name;
     private String country;
-    private List<Track> tracks;
 
     public ArtistWrapper(){}
 
@@ -25,13 +24,5 @@ public class ArtistWrapper {
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    public List<Track> getTracks() {
-        return tracks;
-    }
-
-    public void setTracks(List<Track> tracks) {
-        this.tracks = tracks;
     }
 }

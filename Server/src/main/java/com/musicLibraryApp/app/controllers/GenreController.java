@@ -6,6 +6,8 @@ import com.musicLibraryApp.app.services.GenreService;
 import com.musicLibraryApp.app.dto.Genre;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/genres")
@@ -17,12 +19,12 @@ public class GenreController {
     }
 
     @GetMapping("/")
-    public GenreDb[] getAllGenre(){
+    public List<Genre> getAllGenre(){
          return genreService.getAllGenre();
     }
 
     @GetMapping("/{id}")
-    public GenreDb getGenre(@PathVariable int id){
+    public Genre getGenre(@PathVariable int id){
         return genreService.getGenre(id);
     }
 
@@ -33,7 +35,7 @@ public class GenreController {
 
     @PutMapping("/{id}")
     public void updateGenre(@PathVariable int id, @RequestBody Genre newGenre){
-        genreService.updateGenre(id, new GenreDb(newGenre));
+        genreService.updateGenre(id, newGenre);
     }
 
     @DeleteMapping("/{id}")

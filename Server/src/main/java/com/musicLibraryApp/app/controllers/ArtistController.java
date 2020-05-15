@@ -8,6 +8,7 @@ import com.musicLibraryApp.app.wrappers.ArtistWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -31,14 +32,14 @@ public class ArtistController {
         return artistService.getArtist(id);
     }
 
-    @PostMapping("/getArtistsByGenre")
-    public List<Artist> getArtistsByGenre(@RequestBody Genre genre){
-        return artistService.getArtistsByGenre(genre);
+    @GetMapping("/getArtistsByGenre")
+    public List<Artist> getArtistsByGenre(@PathVariable int genreId){
+        return artistService.getArtistsByGenre(genreId);
     }
 
     @PostMapping("/")
     public void addArtist(@RequestBody ArtistWrapper artist) {
-        artistService.addArtist(artist.getName(), artist.getCountry(), artist.getTracks());
+        artistService.addArtist(artist.getName(), artist.getCountry(), new ArrayList<Track>());
     }
 
     @PutMapping("/{id}")

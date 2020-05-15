@@ -1,5 +1,6 @@
 package com.musicLibraryApp.app.dbModels;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.musicLibraryApp.app.dto.Artist;
 
 import javax.persistence.*;
@@ -22,7 +23,7 @@ public class ArtistDb implements Serializable {
     @Column(name = "COUNTRY")
     private String country;
 
-    @OneToMany(mappedBy = "artist", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "artist", fetch = FetchType.EAGER)
     private List<TrackDb> tracks;
 
     public ArtistDb(String name, String country, List<TrackDb> tracks) {

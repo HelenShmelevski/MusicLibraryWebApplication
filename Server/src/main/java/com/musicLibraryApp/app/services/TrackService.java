@@ -25,52 +25,51 @@ public class TrackService implements ITrackService  {
         this.artistService = artistService;
     }
 
+    @Override
     public List<Track> getAllTrack() {
         return this.trackRepository
                 .findAll()
                 .stream()
-                .map(trackDb-> {
-                    ArtistDb artistDb = trackDb.getArtist();
-                    ArtistShortInfo artistShortInfo = new ArtistShortInfo(artistDb.getArtistId(), artistDb.getName(), artistDb.getName());
-                    return new Track(trackDb.getTrackId(), trackDb.getTitle(), trackDb.getAlbum(), trackDb.getDateRelease(), artistShortInfo);
-                })
+                .map(this::convertToTrack)
                 .collect(Collectors.toList());
     }
 
+    @Override
     public List<Track> getAllTrackFromReleasePeriod(Date startDate, Date endDate){
-        // TODO: Забирать query запросом из бд данные треки
-        List<Track> trackList = getAllTrack();
-        return trackList
+        return this.trackRepository
+                .getAllTrackFromReleasePeriod(startDate, endDate)
                 .stream()
-                .filter(track -> track.getDateRelease().getTime() >= startDate.getTime()
-                        && track.getDateRelease().getTime() <= endDate.getTime())
+                .map(this::convertToTrack)
                 .collect(Collectors.toList());
     }
 
-    public Track getTrack(int trackId) throws ResourceNotFoundException {
+
+
+    @Override
+    public Track getTrack(int trackId) {
         return this.trackRepository
                 .findById(trackId)
-                .map(trackDb-> {
-                    ArtistDb artistDb = trackDb.getArtist();
-                    ArtistShortInfo artistShortInfo = new ArtistShortInfo(artistDb.getArtistId(), artistDb.getName(), artistDb.getName());
-                    return new Track(trackDb.getTrackId(), trackDb.getTitle(), trackDb.getAlbum(), trackDb.getDateRelease(), artistShortInfo);
-                })
+                .map(this::convertToTrack)
                 .<ResourceNotFoundException>orElseThrow(() -> {
                     throw new ResourceNotFoundException("Record in TRACK table isn't found with id: " + trackId);
                 });
     }
 
+    @Override
     public void addTrack(String title, String album, Date dateRelease, int artistId) {
         // TODO: Сделать, что если не нашли данного артиста кидать ошибку, трек не добавлять
         Artist artist = artistService.getArtist(artistId);
         TrackDb newTrack = new TrackDb(title, album, dateRelease, new ArtistDb(artist));
         this.trackRepository.saveAndFlush(newTrack);
     }
+
+    @Override
     public void deleteTrack(int trackId) {
         // TODO: Сделать, что если нет данного трека в базе, то бросать ошибку
         this.trackRepository.deleteById(trackId);
     }
 
+    @Override
     public void updateTrack(int trackId, Track newTrack) throws ResourceNotFoundException {
             this.trackRepository
                     .findById(trackId)
@@ -84,5 +83,11 @@ public class TrackService implements ITrackService  {
                     }).<ResourceNotFoundException>orElseThrow(() -> {
                 throw new ResourceNotFoundException("Record in TRACK table isn't found with id: " + trackId);
             });
+    }
+
+    private Track convertToTrack(TrackDb trackDb) {
+        ArtistDb artistDb = trackDb.getArtist();
+        ArtistShortInfo artistShortInfo = new ArtistShortInfo(artistDb.getArtistId(), artistDb.getName(), artistDb.getCountry());
+        return new Track(trackDb.getTrackId(), trackDb.getTitle(), trackDb.getAlbum(), trackDb.getDateRelease(), artistShortInfo);
     }
 }

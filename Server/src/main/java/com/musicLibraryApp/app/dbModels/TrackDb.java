@@ -1,5 +1,6 @@
 package com.musicLibraryApp.app.dbModels;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.musicLibraryApp.app.dto.Track;
 import org.hibernate.annotations.OnDelete;
@@ -27,9 +28,8 @@ public class TrackDb implements Serializable {
     @Column(name = "DATE_RELEASE")
     private Date dateRelease;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ARTIST_ID", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private ArtistDb artist;
 
@@ -40,11 +40,11 @@ public class TrackDb implements Serializable {
         this.artist = artist;
     }
 
-    public TrackDb(Track trackDTO) {
-        this.trackId = trackDTO.getId();
-        this.title = trackDTO.getTitle();
-        this.album = trackDTO.getAlbum();
-        this.dateRelease = trackDTO.getDateRelease();
+    public TrackDb(Track track) {
+        this.trackId = track.getId();
+        this.title = track.getTitle();
+        this.album = track.getAlbum();
+        this.dateRelease = track.getDateRelease();
     }
 
     public TrackDb() {}

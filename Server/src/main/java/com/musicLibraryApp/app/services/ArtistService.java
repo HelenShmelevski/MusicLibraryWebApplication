@@ -19,12 +19,10 @@ import java.util.stream.Collectors;
 @Service
 public class ArtistService implements IArtistService  {
     private final IArtistRepository artistRepository;
-    private final ArtistGenresService artistGenresService;
 
     @Autowired
-    public ArtistService(IArtistRepository artistRepository, ArtistGenresService artistsGenresService) {
+    public ArtistService(IArtistRepository artistRepository) {
         this.artistRepository = artistRepository;
-        this.artistGenresService = artistsGenresService;
     }
 
     @Override
@@ -32,7 +30,7 @@ public class ArtistService implements IArtistService  {
         return this.artistRepository
                 .findAll()
                 .stream()
-                .map(this::convertArtistDbToArtist)
+                .map(this::convertToArtist)
                 .collect(Collectors.toList());
     }
 
@@ -40,37 +38,32 @@ public class ArtistService implements IArtistService  {
     public Artist getArtist(int artistId) {
         return this.artistRepository
                 .findById(artistId)
-                .map(this::convertArtistDbToArtist)
+                .map(this::convertToArtist)
                 .<ResourceNotFoundException>orElseThrow(() -> {
                     throw new ResourceNotFoundException("Record in ARTIST table isn't found with id: " + artistId);
                 });
     }
 
-    public List<Artist> getArtistsByGenre(Genre genre){
-        // TODO: Переделать на query запросы
-        ArtistsGenresDb[] allAG = artistGenresService.getAllAG();
-        List<ArtistsGenresDb> allAGByGenre = new ArrayList<ArtistsGenresDb>();
-        for (int i = 0; i <allAG.length ; i++) {
-            if(allAG[i].getGenreId()==genre.getId()){
-                allAGByGenre.add(allAG[i]);
-            }
-        }
-        List<Artist> artistsByGenre = new ArrayList<Artist>();
-        for (int i = 0; i < allAGByGenre.size(); i++) {
-           artistsByGenre.add(getArtist(allAGByGenre.get(i).getArtistId()));
-        }
-        return artistsByGenre;
+    @Override
+    public List<Artist> getArtistsByGenre(int genreId){
+        return artistRepository.getArtistsByGenre(genreId)
+                .stream()
+                .map(this::convertToArtist)
+                .collect(Collectors.toList());
     }
 
+    @Override
     public void addArtist(String name, String country, List<Track> tracks) {
         ArtistDb artistDb = new ArtistDb(name, country, tracks.stream().map(TrackDb::new).collect(Collectors.toList()));
         this.artistRepository.saveAndFlush(artistDb);
     }
 
+    @Override
     public void deleteArtist(int artistId) {
         this.artistRepository.deleteById(artistId);
     }
 
+    @Override
     public void updateArtist(int artistId, Artist newArtist) {
         this.artistRepository
                 .findById(artistId)
@@ -89,7 +82,7 @@ public class ArtistService implements IArtistService  {
                 });
     }
 
-    private Artist convertArtistDbToArtist(ArtistDb artistDb) {
+    private Artist convertToArtist(ArtistDb artistDb) {
         List<Track> trackList = artistDb
                 .getTracks()
                 .stream()

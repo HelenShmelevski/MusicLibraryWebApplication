@@ -56,7 +56,7 @@ public class GenreService implements IGenreService {
                 .map(genreDb -> {
                     genreDb.setTitle(newGenre.getTitle());
                     return genreRepository.save(genreDb);
-                }).orElseThrow(()-> {
+                }).<ResourceNotFoundException>orElseThrow(()-> {
                     throw new ResourceNotFoundException("Record in GENRE table isn't found with id: " + genreId);
                 });
     }
