@@ -49,7 +49,7 @@ public class Track implements Serializable {
 
     public Track() {}
 
-    @JsonIgnore
+//    @JsonIgnore
     public Artist getArtist() {
         return artist;
     }

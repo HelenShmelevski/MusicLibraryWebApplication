@@ -11,15 +11,15 @@ export class GetService {
   constructor(private http: HttpClient) {}
 
   getArtists() {
-    return this.http.get<ArtistModel[]>('http://localhost:82/artists/');
+    return this.http.get<ArtistModel[]>('http://localhost:84/artists/');
   }
 
   getGenres() {
-    return this.http.get<GenreModel[]>('http://localhost:82/genres/');
+    return this.http.get<GenreModel[]>('http://localhost:84/genres/');
   }
 
   getTracks() {
-    return this.http.get<TrackModel[]>('http://localhost:82/tracks/');
+    return this.http.get<TrackModel[]>('http://localhost:84/tracks/');
   }
 
 }
