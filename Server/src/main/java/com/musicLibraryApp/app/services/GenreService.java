@@ -1,12 +1,14 @@
 package com.musicLibraryApp.app.services;
 
+import com.musicLibraryApp.app.dto.Genre;
 import com.musicLibraryApp.app.exceptions.ResourceNotFoundException;
 import com.musicLibraryApp.app.dbModels.GenreDb;
 import com.musicLibraryApp.app.repositories.IGenreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class GenreService implements IGenreService {
@@ -18,19 +20,22 @@ public class GenreService implements IGenreService {
     }
 
     @Override
-    public GenreDb[] getAllGenre() {
-        return this.genreRepository.findAll().toArray(new GenreDb[0]);
+    public List<Genre> getAllGenre() {
+        return this.genreRepository
+                .findAll()
+                .stream()
+                .map(this::convertToGenre)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public GenreDb getGenre(int genreId) {
-        Optional<GenreDb> foundGenre = this.genreRepository.findById(genreId);
-
-        if (foundGenre.isPresent()) {
-            return foundGenre.get();
-        } else {
-            throw new ResourceNotFoundException("Record in GENRE table isn't found with id: " + genreId);
-        }
+    public Genre getGenre(int genreId) {
+        return this.genreRepository
+                .findById(genreId)
+                .map(this::convertToGenre)
+                .<ResourceNotFoundException>orElseThrow(() -> {
+                    throw new ResourceNotFoundException("Record in GENRE table isn't found with id: " + genreId);
+                });
     }
 
     @Override
@@ -45,15 +50,18 @@ public class GenreService implements IGenreService {
     }
 
     @Override
-    public void updateGenre(int genreId, GenreDb newGenre) {
-        Optional<GenreDb> updatedGenre = this.genreRepository.findById(genreId);
+    public void updateGenre(int genreId, Genre newGenre) {
+        this.genreRepository
+                .findById(genreId)
+                .map(genreDb -> {
+                    genreDb.setTitle(newGenre.getTitle());
+                    return genreRepository.save(genreDb);
+                }).orElseThrow(()-> {
+                    throw new ResourceNotFoundException("Record in GENRE table isn't found with id: " + genreId);
+                });
+    }
 
-        if (updatedGenre.isPresent()) {
-            GenreDb genre = updatedGenre.get();
-            genre.setTitle(newGenre.getTitle());
-            genreRepository.save(genre);
-        } else {
-            throw new ResourceNotFoundException("Record in GENRE table isn't found with id: " + genreId);
-        }
+    private Genre convertToGenre(GenreDb genreDb) {
+        return new Genre(genreDb.getGenreId(), genreDb.getTitle());
     }
 }
