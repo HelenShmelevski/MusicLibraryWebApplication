@@ -1,5 +1,5 @@
 export class ArtistModel {
-  artistId?: number;
+  id?: number;
   name?: string;
  // genre?: string;
  // country?: string;

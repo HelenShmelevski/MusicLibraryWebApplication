@@ -10,8 +10,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr tabindex="0" class="table-body" *ngFor="let artist of artists">
-      <td (click)="deleteArtist(artist.artistId)">{{artist.artistId}}</td>
+    <tr tabindex="0" class="table-body" *ngFor="let artist of artists" >
+      <td (click)="deleteArtist(artist.id)">{{artist.id}}</td>
       <td>{{artist.name}}</td>
       <td>{{artist.genre}}</td>
       <td>{{artist.country}}</td>

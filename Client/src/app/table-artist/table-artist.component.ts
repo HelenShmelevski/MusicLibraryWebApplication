@@ -44,7 +44,8 @@ export class TableArtistComponent implements OnInit {
       .subscribe(data => {
         // const data = response.json();
         console.log(data);
-        this.artists = data;
+        this.getArtists();
+        // this.artists = data;
       });
 
   }
