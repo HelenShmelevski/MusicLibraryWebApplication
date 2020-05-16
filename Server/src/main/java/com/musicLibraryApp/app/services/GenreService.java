@@ -61,6 +61,17 @@ public class GenreService implements IGenreService {
                 });
     }
 
+    @Override
+    public Genre getGenreByArtist(int id) {
+        try {
+            GenreDb genreDb = this.genreRepository.getGenreByArtist(id);
+            Genre genre = convertToGenre(genreDb);
+            return genre;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     private Genre convertToGenre(GenreDb genreDb) {
         return new Genre(genreDb.getGenreId(), genreDb.getTitle());
     }

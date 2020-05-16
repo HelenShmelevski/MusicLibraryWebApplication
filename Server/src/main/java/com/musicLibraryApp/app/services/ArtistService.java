@@ -1,5 +1,6 @@
 package com.musicLibraryApp.app.services;
 
+import com.musicLibraryApp.app.dbModels.GenreDb;
 import com.musicLibraryApp.app.dbModels.TrackDb;
 import com.musicLibraryApp.app.dto.Artist;
 import com.musicLibraryApp.app.dto.ArtistShortInfo;
@@ -7,22 +8,22 @@ import com.musicLibraryApp.app.dto.Genre;
 import com.musicLibraryApp.app.dto.Track;
 import com.musicLibraryApp.app.exceptions.ResourceNotFoundException;
 import com.musicLibraryApp.app.dbModels.ArtistDb;
-import com.musicLibraryApp.app.dbModels.ArtistsGenresDb;
 import com.musicLibraryApp.app.repositories.IArtistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class ArtistService implements IArtistService  {
     private final IArtistRepository artistRepository;
+    private final IGenreService genreService;
 
     @Autowired
-    public ArtistService(IArtistRepository artistRepository) {
+    public ArtistService(IArtistRepository artistRepository, IGenreService genreService) {
         this.artistRepository = artistRepository;
+        this.genreService = genreService;
     }
 
     @Override
@@ -30,16 +31,24 @@ public class ArtistService implements IArtistService  {
         return this.artistRepository
                 .findAll()
                 .stream()
-                .map(this::convertToArtist)
-                .collect(Collectors.toList());
+                .map(artistDb -> {
+            Artist artist = convertToArtist(artistDb);
+            Genre genre = genreService.getGenreByArtist(artist.getId());
+            artist.setGenre(genre);
+            return artist;
+        }).collect(Collectors.toList());
     }
 
     @Override
     public Artist getArtist(int artistId) {
         return this.artistRepository
                 .findById(artistId)
-                .map(this::convertToArtist)
-                .<ResourceNotFoundException>orElseThrow(() -> {
+                .map(artistDb -> {
+                    Artist artist = convertToArtist(artistDb);
+                    Genre genre = genreService.getGenreByArtist(artist.getId());
+                    artist.setGenre(genre);
+                    return artist;
+                }).<ResourceNotFoundException>orElseThrow(() -> {
                     throw new ResourceNotFoundException("Record in ARTIST table isn't found with id: " + artistId);
                 });
     }
