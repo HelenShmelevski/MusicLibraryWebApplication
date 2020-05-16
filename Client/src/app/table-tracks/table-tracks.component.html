@@ -1,8 +1,7 @@
 <div class="table-wrapper">
   <table class="table table-striped">
     <thead>
-    <tr class="color" >
-      <th class="fix">Id</th>
+    <tr class="color">
       <th class="fix">Название</th>
       <th class="fix">Артист</th>
       <th class="fix">Альбом</th>
@@ -11,16 +10,20 @@
     </tr>
     </thead>
     <tbody>
-    <tr tabindex="0" class="table-body" *ngFor="let track of tracks">
-      <td>{{track.trackId}}</td>
+    <tr tabindex="0" class="table-body" *ngFor="let track of tracks"
+        (click)="getId(track.id)" (focus)="flagDisable=false">
+
       <td>{{track.title}}</td>
-      <td>{{track.name}}</td>
+      <td>{{track.artist.name}}</td>
       <td>{{track.album}}</td>
       <td>{{track.dateRelease}}</td>
     </tr>
+
     </tbody>
   </table>
 </div>
-<button type="button" class="btn btn-light" [routerLink]="'/add-track'" >Добавить</button>
+
+<button type="button" class="btn btn-light" [routerLink]="'/add-track'" [disabled]="!flagDisable">Добавить</button>
+<button type="button" class="btn btn-light" [routerLink]="['/add-track', id]" [disabled]="flagDisable">Изменить</button>
 
 

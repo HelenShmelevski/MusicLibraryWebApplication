@@ -12,30 +12,27 @@ import {ArtistModel} from "../../dto/artist.model";
 
 export class TableArtistComponent implements OnInit {
 
-
+  id: number;
+  flagDisable: boolean = true;
   artists: ArtistModel[] = [];
 
-
-  // constructor(private createService: CreateService, private getService: GetService) {
-  // }
-
-
-  constructor( private getService: GetService) {
+  constructor(private getService: GetService) {
   }
 
   ngOnInit(): void {
-    // this.getService.getArtists();
-    // this.artists = this.createService.artists;
     this.getArtists();
   }
 
   getArtists() {
     this.getService.getArtists()
       .subscribe(data => {
-        // const data = response.json();
         console.log(data);
         this.artists = data;
       });
   }
 
+
+  getId(id: number) {
+    this.id = id;
+  }
 }

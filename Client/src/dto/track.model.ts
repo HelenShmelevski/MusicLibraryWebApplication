@@ -1,9 +1,11 @@
+import {ArtistModel} from "./artist.model";
+
 export class TrackModel {
-  trackId?: string;
+  id?: string;
   title?: string;
   name?: string;
   album?: string;
-  dateRelease?: string;
-
+  dateRelease?: Date;
+  artist?: ArtistModel;
 
 }

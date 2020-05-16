@@ -2,9 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {GetService} from "../services/get.service";
 import {TrackModel} from "../../dto/track.model";
 import {GenreModel} from "../../dto/genre.model";
-
-
-
+import {ArtistModel} from "../../dto/artist.model";
 
 @Component({
   selector: 'app-table-genre',
@@ -12,9 +10,12 @@ import {GenreModel} from "../../dto/genre.model";
   styleUrls: ['./table-genre.component.css']
 })
 export class TableGenreComponent implements OnInit {
+  id: number;
+  flagDisable: boolean = true;
   genres: GenreModel[] = [];
 
-  constructor( private getService: GetService) {}
+  constructor(private getService: GetService) {
+  }
 
   ngOnInit(): void {
     this.getGenres();
@@ -29,6 +30,9 @@ export class TableGenreComponent implements OnInit {
   }
 
 
+  getId(id: number) {
+    this.id = id;
+  }
 
 
 }
