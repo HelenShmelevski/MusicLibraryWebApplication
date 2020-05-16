@@ -3,4 +3,8 @@ export class ArtistModel {
   name?: string;
  // genre?: string;
   country?: string;
+
+  tracks: [{
+    title: ""
+  }]
 }

@@ -1,4 +1,4 @@
-<div class="table-wrapper">
+<div class="table-wrapper" *ngIf="flag">
   <table class="table table-striped">
     <thead>
     <tr class="color">
@@ -13,13 +13,40 @@
     <tr tabindex="0" class="table-body" *ngFor="let artist of artists" (click)="getId(artist.id)">
 <!--        (focus)="flagDisable=false"-->
 <!--      <td >{{artist.id}}</td>-->
-      <td>{{artist.name}}</td>
+      <td><a (click)="flag=false; getArtist(artist)">{{artist.name}}</a></td>
       <td>{{artist.genre}}</td>
       <td>{{artist.country}}</td>
     </tr>
     </tbody>
   </table>
 </div>
+
+
+<div class="table-wrapper" *ngIf="!flag">
+  <table class="table table-striped">
+    <thead>
+    <tr class="color">
+      <!--      <th class="fix">Id</th>-->
+      <th class="fix">Имя артиста <a (click)="flag=true">{{artist.name}}</a></th>
+      <th class="fix">Треки</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let tracks of artist.tracks">
+      <td></td>
+      <td >
+        {{tracks.title}}
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
 
 
 <button type="button" class="btn btn-light" routerLink='/add-artist'>Добавить</button>

@@ -28,3 +28,8 @@
   background-color: #C8A35F;
 }
 
+  a:hover {
+    text-decoration: underline;
+  }
+
+

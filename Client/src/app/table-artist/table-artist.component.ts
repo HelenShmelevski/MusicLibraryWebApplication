@@ -16,6 +16,9 @@ export class TableArtistComponent implements OnInit {
   flagDisable: boolean = true;
   artists: ArtistModel[] = [];
   id: number ;
+  artist: ArtistModel; //
+
+  flag: boolean;
 
   // constructor(private createService: CreateService, private getService: GetService) {
   // }
@@ -28,6 +31,7 @@ export class TableArtistComponent implements OnInit {
     // this.getService.getArtists();
     // this.artists = this.createService.artists;
     this.getArtists();
+    this.flag = true;
   }
 
   getArtists() {
@@ -53,6 +57,10 @@ export class TableArtistComponent implements OnInit {
 
   getId (id: number){
     this.id = id;
+  }
+
+  getArtist(artist: ArtistModel) {
+    this.artist = artist;
   }
 
 }
