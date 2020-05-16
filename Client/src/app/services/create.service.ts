@@ -1,83 +1,32 @@
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpRequest} from '@angular/common/http';
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
+import {ArtistModel} from "../../dto/artist.model";
+import {GenreModel} from "../../dto/genre.model";
+import {TrackModel} from "../../dto/track.model";
 
 @Injectable()
 export class CreateService {
-
-  // constructor(private http: HttpClientModule) {
-  //
-  // }
-
-  artists = [];
-  genres = [
-    {
-      id: 1,
-      title: 'pop',
-      name: 'Билан'
-    },
-    {
-      id: 2,
-      title: 'rap',
-      name: 'Баста'
-    },
-    {
-      id: 3,
-      title: 'lyrics',
-      name: 'Монатик'
-    },
-
-  ];
-  tracks = [
-    {
-      id: 12,
-      name: 'Билан',
-      title: 'любовная любовь',
-      genre: 'pop',
-      duration: 5
-    },
-    {
-      id: 12,
-      name: 'sgreg',
-      title: 'любовная любовь',
-      genre: 'hdthd',
-      duration: 5
-    },
-    {
-      id: 12,
-      name: 'rgrh',
-      genre: 'pop',
-      duration: 5
-    },
-    {
-      id: 12,
-      name: 'hthtnt',
-      title: 'любовная любовь',
-      genre: 'pop',
-      duration: 5
-    },
-    {
-      id: 12,
-      name: 'Билан',
-      title: 'любовная любовь',
-      genre: 'pop',
-      duration: 5
-    }
-  ];
-
-  //getAllArtist(http: HttpClientModule) : Observable<ArtistDTO>{
-  // return this.http.get('http://localhost:82/artists');
-  // }
-
-  addArtist(id: number, name: string, genre: string) {
-    this.artists.push({id, name, genre});
+  // tracks : TrackModel[] = [];
+  constructor(private http: HttpClient) {
   }
 
-  addGenre(id: number, title: string, name: string) {
-    this.genres.push({id, title, name});
+  addTrack(track: TrackModel) {
+    console.log(track);
+    const body = {title: track.title, album: track.album, dateRelease: track.dateRelease, artist: track.artist};
+    console.log(body);
+    return this.http.post('http://localhost:82/tracks/', body);
   }
 
-  addTrack(id: number, name: string, title: string, genre: string, duration: number) {
-    this.tracks.push({id, name, title, genre, duration});
+  addArtist(artist: ArtistModel) {
+    const body = {name: artist.name, country: artist.country};
+    console.log(body);
+    return this.http.post('http://localhost:82/artists/', body);
+  }
+
+  addGenre(genre: GenreModel) {
+    const body = {title: genre.title};
+    console.log(body);
+    return this.http.post('http://localhost:82/genres/', body);
   }
 }

@@ -1,5 +1,5 @@
 export class GenreModel {
-  genreId?: number;
+  id?: number;
   title?: string;
 
 }

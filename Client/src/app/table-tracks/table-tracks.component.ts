@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {GetService} from "../services/get.service";
 import {TrackModel} from "../../dto/track.model";
+import {ArtistModel} from "../../dto/artist.model";
 
 
 @Component({
@@ -9,7 +10,11 @@ import {TrackModel} from "../../dto/track.model";
   styleUrls: ['./table-tracks.component.css']
 })
 export class TableTracksComponent implements OnInit {
-  tracks: TrackModel[] = [];
+
+  id: number;
+  flagDisable: boolean = true;
+  tracks: TrackModel[];
+  //artists:ArtistModel[] =[];
 
   constructor(private getService: GetService) {
   }
@@ -22,11 +27,13 @@ export class TableTracksComponent implements OnInit {
 
   getTracks() {
     this.getService.getTracks()
-      .subscribe(data => {
-        console.log(data);
-        this.tracks = data;
+      .subscribe(tracks => {
+        console.log(tracks);
+       this.tracks = tracks;
       });
   }
-
+  getId(id: number) {
+    this.id = id;
+  }
 }
 
