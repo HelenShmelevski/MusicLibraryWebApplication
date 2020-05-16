@@ -1,44 +1,41 @@
 <div class="wrapper">
 
   <div class="form-group">
-    <p>Новый артист</p>
-    <!--<input class="form-control" [(ngModel)]="track.trackId" placeholder="Введите id">-->
-
+    <p>Новый трек</p>
   </div>
 
-  <!--<div class="form-group">-->
-    <!--<input class="form-control" [(ngModel)]="track.name"  placeholder="Введите имя артиста">-->
-  <!--</div>-->
 
   <div class="form-group">
-    <input  class="form-control" [(ngModel)]="track.title" placeholder="Введите название трека">
+    <p>Выберите артиста</p>
+    <select class="form-control" [(ngModel)]="track.artist">
+      <option *ngFor="let artist of artists" [ngValue]="artist">{{artist.name}} </option>
 
+    </select>
   </div>
-
-  <!--<div class="form-group">-->
-    <!--<p>Введите жанр</p>-->
-    <!--<select class="form-control"  [(ngModel)]="trackGenre" >-->
-
-      <!--<option > rock </option>-->
-      <!--<option > jazz </option>-->
-      <!--<option > pop </option>-->
-    <!--</select>-->
-  <!--</div>-->
-
-  <!--<div class="form-group">-->
-    <!--<input  class="form-control" [(ngModel)]="trackDuration"  placeholder="Введите длительность трека">-->
-
-  <!--</div>-->
 
   <div class="form-group">
-    <button class="btn btn-light" (click)="addTrack()">Добавить</button>
+    <input class="form-control" [(ngModel)]="track.title" placeholder="Введите название трека">
 
   </div>
-  <div *ngIf="done">
-    <div>Получено от сервера:</div>
-    <!--<div>Имя: {{receivedTrack.name}}</div>-->
-    <div>Название: {{receivedTrack.title}}</div>
+
+  <div class="form-group">
+    <input class="form-control" input type="date" [(ngModel)]="track.dateRelease" placeholder="Введите дату релиза">
   </div>
+
+  <div class="form-group">
+    <input class="form-control" [(ngModel)]="track.album" placeholder="Введите название альбома">
+  </div>
+
+
+  <div class="form-group">
+    <button class="btn btn-light" (click)="addTrack(track)" [disabled]="!flagDisable" [routerLink]="'/tracks'">
+      Добавить
+    </button>
+    <button class="btn btn-light" (click)="changeTrack(track)" [disabled]="flagDisable" [routerLink]="'/tracks'">
+      Сохранить изменения
+    </button>
+  </div>
+
 </div>
 
 

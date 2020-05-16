@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {GetService} from "../services/get.service";
 import {TrackModel} from "../../dto/track.model";
 import {GenreModel} from "../../dto/genre.model";
+import {ArtistModel} from "../../dto/artist.model";
 import {DeleteService} from "../services/delete.service";
 
 
@@ -13,16 +14,13 @@ import {DeleteService} from "../services/delete.service";
   styleUrls: ['./table-genre.component.css']
 })
 export class TableGenreComponent implements OnInit {
+  id: number;
+  flagDisable: boolean = true;
   genres: GenreModel[] = [];
-  id: number ;
 
   constructor( private getService: GetService, private deleteService: DeleteService) {}
 
   ngOnInit(): void {
-    this.getGenres();
-  }
-
-  getGenres() {
     this.getService.getGenres()
       .subscribe(data => {
         console.log(data);
@@ -41,10 +39,9 @@ export class TableGenreComponent implements OnInit {
 
   }
 
-
-  getId (id: number){
+  getId(id: number) {
     this.id = id;
   }
 
-  }
 
+}

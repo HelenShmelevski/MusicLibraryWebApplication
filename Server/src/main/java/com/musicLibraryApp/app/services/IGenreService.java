@@ -12,4 +12,5 @@ public interface IGenreService {
     void addGenre(String string);
     void deleteGenre(int genreId);
     void updateGenre(int genreId, Genre newGenre);
+    Genre getGenreByArtist(int id);
 }

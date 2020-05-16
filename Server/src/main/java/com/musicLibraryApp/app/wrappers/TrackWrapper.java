@@ -8,7 +8,7 @@ public class TrackWrapper {
     private String title;
     private String album;
     private Date dateRelease;
-    private ArtistShortInfo artist;
+    private int artistId;
 
     public TrackWrapper() {}
 
@@ -36,11 +36,11 @@ public class TrackWrapper {
         this.dateRelease = dateRelease;
     }
 
-    public ArtistShortInfo getArtist() {
-        return artist;
+    public int getArtistId() {
+        return artistId;
     }
 
-    public void setArtist(ArtistShortInfo artist) {
-        this.artist = artist;
+    public void setArtistId(int artistId) {
+        this.artistId = artistId;
     }
 }

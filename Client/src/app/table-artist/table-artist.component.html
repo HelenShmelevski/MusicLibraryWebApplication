@@ -11,7 +11,7 @@
     </thead>
     <tbody>
     <tr tabindex="0" class="table-body" *ngFor="let artist of artists" (click)="getId(artist.id)">
-<!--        (focus)="flagDisable=false"-->
+        (focus)="flagDisable=false"
 <!--      <td >{{artist.id}}</td>-->
       <td><a (click)="flag=false; getArtist(artist)">{{artist.name}}</a></td>
       <td>{{artist.genre}}</td>
@@ -50,7 +50,8 @@
 
 
 <button type="button" class="btn btn-light" routerLink='/add-artist'>Добавить</button>
-<button type="button" class="btn btn-light" routerLink='/add-artist'>Изменить</button>
+<button type="button" class="btn btn-light" [routerLink]="['/add-artist', id]" [disabled]="flagDisable">Изменить
+</button>
 <button type="button" class="btn btn-light" (click)="deleteArtist()" >Удалить</button>
 
 

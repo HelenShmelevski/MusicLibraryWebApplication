@@ -7,19 +7,26 @@ import {TrackModel} from "../../dto/track.model";
 
 @Injectable()
 export class CreateService {
-
+  // tracks : TrackModel[] = [];
   constructor(private http: HttpClient) {
   }
 
   addTrack(track: TrackModel) {
-    const body = {trackName: track.title};
-    //alb: track.album, id: track.trackId, date: track.dateRelease };
-    return this.http.post('http://localhost:84/tracks/', body);
+    console.log(track);
+    const body = {title: track.title, album: track.album, dateRelease: track.dateRelease, artistId: track.artist.id};
+    console.log(body);
+    return this.http.post('http://localhost:82/tracks/', body);
   }
 
-   addArtist(artist: ArtistModel){
-     const body = {artistName: artist.name, artistId:artist.id};
+  addArtist(artist: ArtistModel) {
+    const body = {name: artist.name, country: artist.country};
+    console.log(body);
     return this.http.post('http://localhost:82/artists/', body);
   }
 
+  addGenre(genre: GenreModel) {
+    const body = {title: genre.title};
+    console.log(body);
+    return this.http.post('http://localhost:82/genres/', body);
+  }
 }

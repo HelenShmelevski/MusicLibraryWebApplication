@@ -4,6 +4,8 @@ import {ArtistModel} from "../../dto/artist.model";
 import {TrackModel} from "../../dto/track.model";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {GetService} from "../services/get.service";
+import {ActivatedRoute} from "@angular/router";
+import {ChangeService} from "../services/change.service";
 
 
 @Component({
@@ -12,59 +14,50 @@ import {GetService} from "../services/get.service";
   styleUrls: ['./add-track.component.css']
 })
 
-export class AddTrackComponent {
-  //tracks: TrackModel[] = [];
-  // trackId;
-  // trackName: string = '';
-  // trackTitle: string = '';
-  // trackGenre: string = '';
-  //trackDuration = 0;
+export class AddTrackComponent implements OnInit {
 
   track: TrackModel = new TrackModel();
-  receivedTrack: TrackModel;
-  done: boolean = false;
+  flagDisable: boolean = true;
+  id: number;
+  artists: ArtistModel[];
 
-  constructor(private createService: CreateService) {
+  constructor(private createService: CreateService, private getService: GetService,
+              private changeService: ChangeService,
+              private activateRoute: ActivatedRoute) {
+    this.id = activateRoute.snapshot.params['id'];
   }
 
-  addTrack() {
+  addTrack(track: TrackModel) {
+    console.log(track);
     this.createService.addTrack(this.track)
       .subscribe(
         (track: TrackModel) => {
-          this.receivedTrack = track;
           console.log(track);
-          this.done = true;
         },
         error => console.log(error)
       );
   }
+
+  changeTrack(track) {
+    this.changeService.changeTrack(track).subscribe(
+      (data) => {
+        console.log(data);
+      });
+  }
+
+  ngOnInit(): void {
+    this.getService.getArtists()
+      .subscribe(data => {
+        console.log(data);
+        this.artists = data;
+      });
+    if (this.id) {
+      this.flagDisable = false;
+      this.getService.getTrackByID(this.id)
+        .subscribe(data => {
+          this.track = data;
+        });
+    }
+  }
+
 }
-
-
-  //////////////
-  // addTrack() {
-  //   this.createService
-  //     .addTrack( )
-  //     .subscribe((data)=> {
-  //     console.log(data);
-  //     })}
-  /////////////////
-//
-// track: TrackModel=new TrackModel(); // данные вводимого пользователя
-//
-//   receivedTrack: TrackModel; // полученный пользователь
-//   done: boolean = false;
-//   private httpService: any;
-//   submit(track: TrackModel){
-//     this.httpService.postData(track)
-//       .subscribe(
-//         (data: TrackModel) => {this.receivedTrack=data; this.done=true;},
-//         error => console.log(error)
-//       );
-//   }
-
-  // ngOnInit(): void {
-  //
-  // }
-
-

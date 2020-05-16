@@ -1,47 +1,60 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CreateService} from "../services/create.service";
 import {TrackModel} from "../../dto/track.model";
 import {ArtistModel} from "../../dto/artist.model";
 import {ChangeService} from "../services/change.service";
+import {GetService} from "../services/get.service";
+import {GenreModel} from "../../dto/genre.model";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-add-artist',
   templateUrl: './add-artist.component.html',
   styleUrls: ['./add-artist.component.css']
-  // providers: [AddArtistServise]
+
 })
 export class AddArtistComponent implements OnInit {
 
-
+  @Input() genres: GenreModel[];
   artist: ArtistModel = new ArtistModel();
-  receivedArtist: ArtistModel;
-  done: boolean = false;
+  flagDisable: boolean = true;
+  id: number;
 
-  constructor(private createService: CreateService, private changeService: ChangeService) {
+  constructor(private createService: CreateService, private changeService: ChangeService,
+              private getService: GetService, private activateRoute: ActivatedRoute) {
+    this.id = activateRoute.snapshot.params['id'];
   }
 
-  addArtist() {
-    this.createService.addArtist(this.artist)
+  addArtist(artist: ArtistModel) {
+    this.createService.addArtist(artist)
       .subscribe(
         (data: ArtistModel) => {
-          this.receivedArtist = data;
           console.log(data);
-          this.done = true;
         },
         error => console.log(error)
       );
   }
 
-  changeArtist(id: number) {
-    this.changeService.changeArtist(id, this.artist.name).subscribe(
+  changeArtist(artist) {
+    this.changeService.changeArtist(artist).subscribe(
       (data) => {
-
         console.log(data);
       });
   }
 
   ngOnInit(): void {
-    //this.addArtist();
+    this.getService.getGenres()
+      .subscribe(data => {
+        this.genres = data;
+      });
+    if (this.id) {
+      this.flagDisable = false;
+      this.getService.getArtistByID(this.id)
+        .subscribe(data => {
+          this.artist = data;
+        });
+    }
   }
+
 
 }

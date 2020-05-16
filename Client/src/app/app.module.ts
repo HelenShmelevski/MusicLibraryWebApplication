@@ -17,7 +17,6 @@ import {AuthModule} from "./auth/auth.module";
 import {HttpClientModule} from '@angular/common/http';
 import {GetService} from "./services/get.service";
 import {ChangeService} from "./services/change.service";
-import { ArtistTrackListComponent } from './artist-track-list/artist-track-list.component';
 
 
 @NgModule({
@@ -30,8 +29,7 @@ import { ArtistTrackListComponent } from './artist-track-list/artist-track-list.
     TableGenreComponent,
     AddArtistComponent,
     AddTrackComponent,
-    AddGenreComponent,
-    ArtistTrackListComponent
+    AddGenreComponent
   ],
   imports: [
     BrowserModule,

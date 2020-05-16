@@ -1,30 +1,29 @@
 <div class="wrapper">
-<!--  <div class="form-group">-->
-<!--    <p>Новый Id</p>-->
-<!--    <input class="form-control" [(ngModel)]="artistId" placeholder="Введите id">-->
-<!--    &lt;!&ndash;           [(ngModel)]="title" &ndash;&gt;-->
-<!--  </div>-->
 
   <div class="form-group">
     <p>Новый артист</p>
     <input class="form-control" [(ngModel)]="artist.name" placeholder="Введите имя артиста">
-    <input class="form-control" [(ngModel)]="artist.id" placeholder="Введите айди">
+    <input class="form-control" [(ngModel)]="artist.country" placeholder="Введите страну артиста">
+
   </div>
 
+  <!--////////ВЫБОР ЖАНРА, не трогать :)) //-->
   <!--<div class="form-group">-->
-    <!--<p>Выберите жанр</p>-->
-        <!--<select class="form-control" [(ngModel)]="artistGenre" >-->
-          <!--<option > rock </option>-->
-          <!--<option > jazz </option>-->
-          <!--<option > pop </option>-->
-        <!--</select>-->
+  <!--<p>Выберите жанр</p>-->
+  <!--<select class="form-control"  [(ngModel)]="artist.genre"  >-->
+  <!--&lt;!&ndash;*ngFor="let dog of genre" >&ndash;&gt;-->
+  <!--&lt;!&ndash;<select class="form-control"  >&ndash;&gt;-->
+  <!--<option *ngFor="let gnr of genres" [value]="gnr.title" >{{gnr.title}} </option>-->
+  <!--&lt;!&ndash;<option > gggrdg </option>&ndash;&gt;-->
+  <!--&lt;!&ndash;<option >  </option>&ndash;&gt;-->
+  <!--</select>-->
   <!--</div>-->
-
+  <!--////////////////////////////-->
   <div class="form-group">
-    <button class="btn btn-light" (click)="addArtist()">Добавить</button>
-    <button class="btn btn-light" (click)="changeArtist(artist.id)">Сохранить изменения</button>
+    <button class="btn btn-light" (click)="addArtist(artist)" [disabled]="!flagDisable" [routerLink]="'/artists'">Добавить</button>
+    <button class="btn btn-light" (click)="changeArtist(artist)" [disabled]="flagDisable" [routerLink]="'/artists'">Сохранить изменения</button>
 
   </div>
-  </div>
+</div>
 
 

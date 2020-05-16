@@ -20,7 +20,11 @@ const routes: Routes = [
   {path: 'add-artist', component:  AddArtistComponent},
   {path: 'add-track', component: AddTrackComponent},
   {path: 'add-genre', component: AddGenreComponent},
-  {path: '', redirectTo: 'login', pathMatch: 'full'}
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: 'add-artist/:id', component:  AddArtistComponent},
+  {path: 'add-track/:id', component:  AddTrackComponent},
+  {path: 'add-genre/:id', component:  AddGenreComponent}
+
 ];
 
 @NgModule({

@@ -6,6 +6,7 @@ public class Artist {
     private int id;
     private String name;
     private String country;
+    private Genre genre;
     private List<Track> tracks;
 
     public Artist(int id, String name, String country, List<Track> tracks) {
@@ -47,5 +48,13 @@ public class Artist {
 
     public void setTracks(List<Track> tracks) {
         this.tracks = tracks;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 }
