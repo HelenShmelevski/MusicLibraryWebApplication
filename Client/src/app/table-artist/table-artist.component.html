@@ -2,7 +2,7 @@
   <table class="table table-striped">
     <thead>
     <tr class="color">
-      <th class="fix">Id</th>
+<!--      <th class="fix">Id</th>-->
       <th class="fix">Имя артиста</th>
       <th class="fix">Жанр</th>
       <th class="fix">Страна</th>
@@ -10,10 +10,9 @@
     </tr>
     </thead>
     <tbody>
-    <tr tabindex="0" class="table-body" *ngFor="let artist of artists" (click)="getId(artist.id)"
-        (focus)="flagDisable=false"
-        >
-      <td >{{artist.id}}</td>
+    <tr tabindex="0" class="table-body" *ngFor="let artist of artists" (click)="getId(artist.id)">
+<!--        (focus)="flagDisable=false"-->
+<!--      <td >{{artist.id}}</td>-->
       <td>{{artist.name}}</td>
       <td>{{artist.genre}}</td>
       <td>{{artist.country}}</td>
@@ -25,7 +24,7 @@
 
 <button type="button" class="btn btn-light" routerLink='/add-artist'>Добавить</button>
 <button type="button" class="btn btn-light" routerLink='/add-artist'>Изменить</button>
-<button type="button" class="btn btn-light" (click)="deleteArtist()" [disabled]="flagDisable">Удалить</button>
+<button type="button" class="btn btn-light" (click)="deleteArtist()" >Удалить</button>
 
 
-<!--<button ng-click="deleteArtist(artist)">remove</button>-->
+

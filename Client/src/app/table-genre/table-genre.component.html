@@ -3,14 +3,14 @@
 
     <thead>
     <tr class="color">
-      <th class="fix">Id</th>
+<!--      <th class="fix">Id</th>-->
       <th class="fix">Название</th>
 
     </tr>
     </thead>
     <tbody>
-    <tr tabindex="0" class="table-body" *ngFor="let genre of genres">
-      <td>{{genre.genreId}}</td>
+    <tr tabindex="0" class="table-body" *ngFor="let genre of genres" (click)="getId(genre.id)">
+<!--      <td>{{genre.id}}</td>-->
       <td>{{genre.title}}</td>
     </tr>
     </tbody>
@@ -18,7 +18,7 @@
 </div>
 
 <button type="button" class="btn btn-light" routerLink='/add-genre'>Добавить</button>
-<button type="button" class="btn btn-light" >Удалить</button>
+<button type="button" class="btn btn-light" (click)="deleteGenre()" >Удалить</button>
 
 
 

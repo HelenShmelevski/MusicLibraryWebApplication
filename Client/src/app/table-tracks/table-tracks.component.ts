@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {GetService} from "../services/get.service";
 import {TrackModel} from "../../dto/track.model";
+import {DeleteService} from "../services/delete.service";
 
 
 @Component({
@@ -10,8 +11,9 @@ import {TrackModel} from "../../dto/track.model";
 })
 export class TableTracksComponent implements OnInit {
   tracks: TrackModel[] = [];
+  id: number ;
 
-  constructor(private getService: GetService) {
+  constructor(private getService: GetService, private deleteService: DeleteService) {
   }
 
 
@@ -26,6 +28,23 @@ export class TableTracksComponent implements OnInit {
         console.log(data);
         this.tracks = data;
       });
+  }
+
+  deleteTrack() {
+    this.deleteService.deleteTrack(this.id)
+      .subscribe(data => {
+        // const data = response.json();
+        console.log(data);
+        this.getTracks();
+        this.id = null;
+        // this.artists = data;
+      });
+
+  }
+
+
+  getId (id: number){
+    this.id = id;
   }
 
 }

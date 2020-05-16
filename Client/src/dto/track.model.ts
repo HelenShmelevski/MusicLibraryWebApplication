@@ -1,9 +1,14 @@
 export class TrackModel {
- // trackId?: string;
+  id?: number;
   title?: string;
  // name?: string;
-  //album?: string;
- // dateRelease?: string;
+  album?: string;
+ dateRelease?: string;
+
+  artist = {
+   artistsID: -1,
+   name: ""
+ };
 
 
 }
