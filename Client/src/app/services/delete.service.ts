@@ -12,14 +12,14 @@ export class DeleteService {
   }
 
   deleteArtist(id: number) {
-    return this.http.delete(`http://localhost:84/artists/${id}`);
+    return this.http.delete(`http://localhost:82/artists/${id}`);
   }
 
   deleteGenre(id: number) {
-    return this.http.delete(`http://localhost:84/genres/${id}`);
+    return this.http.delete(`http://localhost:82/genres/${id}`);
   }
 
   deleteTrack(id: number) {
-    return this.http.delete(`http://localhost:84/tracks/${id}`);
+    return this.http.delete(`http://localhost:82/tracks/${id}`);
   }
 }

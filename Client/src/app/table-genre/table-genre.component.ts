@@ -21,6 +21,10 @@ export class TableGenreComponent implements OnInit {
   constructor( private getService: GetService, private deleteService: DeleteService) {}
 
   ngOnInit(): void {
+    this.getGenres();
+  }
+
+  getGenres() {
     this.getService.getGenres()
       .subscribe(data => {
         console.log(data);

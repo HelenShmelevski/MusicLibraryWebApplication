@@ -10,8 +10,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr tabindex="0" class="table-body" *ngFor="let artist of artists" (click)="getId(artist.id)">
-        (focus)="flagDisable=false"
+    <tr tabindex="0" class="table-body" *ngFor="let artist of artists" (click)="getId(artist.id)"  (focus)="flagDisable=false">
+
 <!--      <td >{{artist.id}}</td>-->
       <td><a (click)="flag=false; getArtist(artist)">{{artist.name}}</a></td>
       <td>{{artist.genre}}</td>
