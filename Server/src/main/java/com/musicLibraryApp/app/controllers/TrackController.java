@@ -36,7 +36,7 @@ public class TrackController {
 
     @PostMapping("/")
     public void addTrack(@RequestBody TrackWrapper wrapper) {
-        trackService.addTrack(wrapper.getTitle(), wrapper.getAlbum(), wrapper.getDateRelease(), wrapper.getArtist().getArtistId());
+        trackService.addTrack(wrapper.getTitle(), wrapper.getAlbum(), wrapper.getDateRelease(), wrapper.getArtistId());
     }
 
     @PutMapping("/{id}")
