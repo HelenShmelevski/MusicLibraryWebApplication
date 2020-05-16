@@ -1,20 +1,20 @@
 package com.musicLibraryApp.app.dto;
 
 public class ArtistShortInfo {
-    private int artistId;
+    private int id;
     private String name;
     private String country;
 
-    public ArtistShortInfo(int artistId, String name, String country) {
-        this.artistId = artistId;
+    public ArtistShortInfo(int id, String name, String country) {
+        this.id = id;
         this.name = name;
         this.country = country;
     }
 
     public ArtistShortInfo() { }
 
-    public int getArtistId() {
-        return artistId;
+    public int getId() {
+        return id;
     }
 
     public String getName() {

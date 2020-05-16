@@ -76,7 +76,7 @@ public class TrackService implements ITrackService  {
                     .map(trackDb -> {
                         trackDb.setTitle(newTrack.getTitle());
                         trackDb.setAlbum(newTrack.getAlbum());
-                        Artist artist = artistService.getArtist(newTrack.getArtist().getArtistId());
+                        Artist artist = artistService.getArtist(newTrack.getArtist().getId());
                         trackDb.setArtist(new ArtistDb(artist));
                         trackDb.setDateRelease(newTrack.getDateRelease());
                         return trackRepository.save(trackDb);
