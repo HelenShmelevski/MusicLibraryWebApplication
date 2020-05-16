@@ -10,8 +10,10 @@
     </tr>
     </thead>
     <tbody>
-    <tr tabindex="0" class="table-body" *ngFor="let artist of artists" >
-      <td (click)="deleteArtist(artist.id)">{{artist.id}}</td>
+    <tr tabindex="0" class="table-body" *ngFor="let artist of artists" (click)="getId(artist.id)"
+        (focus)="flagDisable=false"
+        >
+      <td >{{artist.id}}</td>
       <td>{{artist.name}}</td>
       <td>{{artist.genre}}</td>
       <td>{{artist.country}}</td>
@@ -23,7 +25,7 @@
 
 <button type="button" class="btn btn-light" routerLink='/add-artist'>Добавить</button>
 <button type="button" class="btn btn-light" routerLink='/add-artist'>Изменить</button>
-<!--<button type="button" class="btn btn-light" (click)="deleteArtist($event)">Удалить</button>-->
+<button type="button" class="btn btn-light" (click)="deleteArtist()" [disabled]="flagDisable">Удалить</button>
 
 
 <!--<button ng-click="deleteArtist(artist)">remove</button>-->

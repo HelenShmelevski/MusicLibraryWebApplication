@@ -13,9 +13,9 @@ import {DeleteService} from "../services/delete.service";
 
 export class TableArtistComponent implements OnInit {
 
-
+  flagDisable: boolean = true;
   artists: ArtistModel[] = [];
-
+  id: number ;
 
   // constructor(private createService: CreateService, private getService: GetService) {
   // }
@@ -39,8 +39,8 @@ export class TableArtistComponent implements OnInit {
       });
   }
 
-  deleteArtist (id: number) {
-    this.deleteService.deleteArtist(id)
+  deleteArtist () {
+    this.deleteService.deleteArtist(this.id)
       .subscribe(data => {
         // const data = response.json();
         console.log(data);
@@ -48,6 +48,11 @@ export class TableArtistComponent implements OnInit {
         // this.artists = data;
       });
 
+  }
+
+
+  getId (id: number){
+    this.id = id;
   }
 
 }

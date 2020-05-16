@@ -8,7 +8,7 @@
   <div class="form-group">
     <p>Новый артист</p>
     <input class="form-control" [(ngModel)]="artist.name" placeholder="Введите имя артиста">
-    <input class="form-control" [(ngModel)]="artist.artistId" placeholder="Введите айди">
+    <input class="form-control" [(ngModel)]="artist.id" placeholder="Введите айди">
   </div>
 
   <!--<div class="form-group">-->
@@ -22,7 +22,7 @@
 
   <div class="form-group">
     <button class="btn btn-light" (click)="addArtist()">Добавить</button>
-    <button class="btn btn-light" (click)="changeArtist(artist.artistId)">Сохранить изменения</button>
+    <button class="btn btn-light" (click)="changeArtist(artist.id)">Сохранить изменения</button>
 
   </div>
   </div>

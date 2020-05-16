@@ -17,9 +17,9 @@ export class CreateService {
     return this.http.post('http://localhost:84/tracks/', body);
   }
 
-  //  addArtist(artist: ArtistModel){
-  //    const body = {artistName: artist.name, artistId:artist.artistId};
-  //   return this.http.post('http://localhost:82/artists/', body);
-  // }
+   addArtist(artist: ArtistModel){
+     const body = {artistName: artist.name, artistId:artist.id};
+    return this.http.post('http://localhost:82/artists/', body);
+  }
 
 }
