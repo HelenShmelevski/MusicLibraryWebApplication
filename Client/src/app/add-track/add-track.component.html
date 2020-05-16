@@ -28,8 +28,12 @@
 
 
   <div class="form-group">
-    <button class="btn btn-light" (click)="addTrack(track)" [disabled]="!flagDisable">Добавить</button>
-    <button class="btn btn-light" (click)="changeTrack(track)" [disabled]="flagDisable">Сохранить изменения</button>
+    <button class="btn btn-light" (click)="addTrack(track)" [disabled]="!flagDisable" [routerLink]="'/tracks'">
+      Добавить
+    </button>
+    <button class="btn btn-light" (click)="changeTrack(track)" [disabled]="flagDisable" [routerLink]="'/tracks'">
+      Сохранить изменения
+    </button>
   </div>
 
 </div>

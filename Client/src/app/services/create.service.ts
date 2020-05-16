@@ -13,7 +13,7 @@ export class CreateService {
 
   addTrack(track: TrackModel) {
     console.log(track);
-    const body = {title: track.title, album: track.album, dateRelease: track.dateRelease, artist: track.artist};
+    const body = {title: track.title, album: track.album, dateRelease: track.dateRelease, artistId: track.artist.id};
     console.log(body);
     return this.http.post('http://localhost:82/tracks/', body);
   }

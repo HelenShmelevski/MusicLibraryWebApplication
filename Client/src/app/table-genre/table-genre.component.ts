@@ -18,10 +18,6 @@ export class TableGenreComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getGenres();
-  }
-
-  getGenres() {
     this.getService.getGenres()
       .subscribe(data => {
         console.log(data);

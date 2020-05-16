@@ -7,8 +7,8 @@
 
 
   <div class="form-group">
-    <button class="btn btn-light" (click)="addGenre(genre)" [disabled]="!flagDisable">Добавить</button>
-    <button class="btn btn-light" (click)="changeGenre(genre)" [disabled]="flagDisable">Сохранить изменения</button>
+    <button class="btn btn-light" (click)="addGenre(genre)" [disabled]="!flagDisable" [routerLink]="'/genres'">Добавить</button>
+    <button class="btn btn-light" (click)="changeGenre(genre)" [disabled]="flagDisable" [routerLink]="'/genres'">Сохранить изменения</button>
 
 
   </div>

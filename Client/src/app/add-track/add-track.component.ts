@@ -46,7 +46,11 @@ export class AddTrackComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getArtists();
+    this.getService.getArtists()
+      .subscribe(data => {
+        console.log(data);
+        this.artists = data;
+      });
     if (this.id) {
       this.flagDisable = false;
       this.getService.getTrackByID(this.id)
@@ -56,11 +60,4 @@ export class AddTrackComponent implements OnInit {
     }
   }
 
-  getArtists() {
-    this.getService.getArtists()
-      .subscribe(data => {
-        console.log(data);
-        this.artists = data;
-      });
-  }
 }

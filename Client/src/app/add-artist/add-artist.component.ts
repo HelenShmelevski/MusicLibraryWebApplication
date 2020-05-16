@@ -43,7 +43,10 @@ export class AddArtistComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getGenres();
+    this.getService.getGenres()
+      .subscribe(data => {
+        this.genres = data;
+      });
     if (this.id) {
       this.flagDisable = false;
       this.getService.getArtistByID(this.id)
@@ -53,11 +56,5 @@ export class AddArtistComponent implements OnInit {
     }
   }
 
-  getGenres() {
-    this.getService.getGenres()
-      .subscribe(data => {
-        this.genres = data;
-      });
-  }
 
 }
