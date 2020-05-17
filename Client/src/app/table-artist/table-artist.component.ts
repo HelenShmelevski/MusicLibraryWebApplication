@@ -3,6 +3,7 @@ import {CreateService} from "../services/create.service";
 import {GetService} from "../services/get.service";
 import {ArtistModel} from "../../dto/artist.model";
 import {DeleteService} from "../services/delete.service";
+import {TrackModel} from "../../dto/track.model";
 
 
 @Component({
@@ -17,6 +18,7 @@ export class TableArtistComponent implements OnInit {
   artists: ArtistModel[] = [];
   id: number ;
   artist: ArtistModel; //
+  track: TrackModel;
 
   flag: boolean;
 
