@@ -20,6 +20,7 @@ export class AddTrackComponent implements OnInit {
   flagDisable: boolean = true;
   id: number;
   artists: ArtistModel[];
+  condition: boolean = true;
 
   constructor(private createService: CreateService, private getService: GetService,
               private changeService: ChangeService,
@@ -51,6 +52,9 @@ export class AddTrackComponent implements OnInit {
         console.log(data);
         this.artists = data;
       });
+    if (this.id) {
+      this.condition = false;
+    }
     if (this.id) {
       this.flagDisable = false;
       this.getService.getTrackByID(this.id)

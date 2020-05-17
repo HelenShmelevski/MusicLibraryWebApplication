@@ -1,7 +1,10 @@
 <div class="wrapper">
 
   <div class="form-group">
-    <p>Новый артист</p>
+    <p *ngIf="condition">Новый артист</p>
+
+    <p *ngIf="!condition">Измените артиста</p>
+
     <input class="form-control" [(ngModel)]="artist.name" placeholder="Введите имя артиста">
     <input class="form-control" [(ngModel)]="artist.country" placeholder="Введите страну артиста">
 
