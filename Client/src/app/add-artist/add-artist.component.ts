@@ -19,6 +19,7 @@ export class AddArtistComponent implements OnInit {
   artist: ArtistModel = new ArtistModel();
   flagDisable: boolean = true;
   id: number;
+  condition: boolean = true;
 
   constructor(private createService: CreateService, private changeService: ChangeService,
               private getService: GetService, private activateRoute: ActivatedRoute) {
@@ -48,6 +49,9 @@ export class AddArtistComponent implements OnInit {
         this.genres = data;
       });
     if (this.id) {
+      this.condition = false;
+    }
+    if (this.id) {
       this.flagDisable = false;
       this.getService.getArtistByID(this.id)
         .subscribe(data => {
@@ -56,5 +60,8 @@ export class AddArtistComponent implements OnInit {
     }
   }
 
+  //  toggle(){
+  // this.condition=!this.condition;
+  //  }
 
 }

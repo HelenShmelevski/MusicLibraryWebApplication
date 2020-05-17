@@ -15,6 +15,7 @@ export class AddGenreComponent implements OnInit {
   flagDisable: boolean = true;
   id: number;
   genre: GenreModel = new GenreModel();
+  condition: boolean = true;
 
   constructor(private createService: CreateService, private changeService: ChangeService,
               private getService: GetService, private activateRoute: ActivatedRoute) {
@@ -41,6 +42,9 @@ export class AddGenreComponent implements OnInit {
   ngOnInit(): void {
     if (this.id) {
       this.flagDisable = false;
+      if (this.id) {
+        this.condition = false;
+      }
       this.getService.getGenreByID(this.id)
         .subscribe(data => {
           this.genre = data;

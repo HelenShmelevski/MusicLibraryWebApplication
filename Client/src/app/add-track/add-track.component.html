@@ -1,7 +1,9 @@
 <div class="wrapper">
 
   <div class="form-group">
-    <p>Новый трек</p>
+    <p *ngIf="condition">Новый трек</p>
+
+    <p *ngIf="!condition">Измените трек</p>
   </div>
 
 
