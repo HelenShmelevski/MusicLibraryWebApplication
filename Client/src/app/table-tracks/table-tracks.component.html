@@ -10,7 +10,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr tabindex="0" class="table-body" *ngFor="let track of tracks"
+    <tr tabindex="0" class="table-body" *ngFor="let track of tracks "
         (click)="getId(track.id)" (focus)="flagDisable=false">
       <td>{{track.title}}</td>
       <td>{{track.artist.name}}</td>
