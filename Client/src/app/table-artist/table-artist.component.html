@@ -49,10 +49,10 @@
 
 
 
-<button type="button" class="btn btn-light" routerLink='/add-artist'>Добавить</button>
+<button type="button" class="btn btn-light" routerLink='/add-artist' [disabled]="!flagDisable" >Добавить</button>
 <button type="button" class="btn btn-light" [routerLink]="['/add-artist', id]" [disabled]="flagDisable">Изменить
 </button>
-<button type="button" class="btn btn-light" (click)="deleteArtist()" >Удалить</button>
+<button type="button" class="btn btn-light" (click)="deleteArtist()" [disabled]="flagDisable" >Удалить</button>
 
 
 

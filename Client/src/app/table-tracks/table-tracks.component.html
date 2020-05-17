@@ -22,6 +22,6 @@
 </div>
 <button type="button" class="btn btn-light" [routerLink]="'/add-track'" [disabled]="!flagDisable">Добавить</button>
 <button type="button" class="btn btn-light" [routerLink]="['/add-track', id]" [disabled]="flagDisable">Изменить</button>
-<button type="button" class="btn btn-light" (click)="deleteTrack()" >Удалить</button>
+<button type="button" class="btn btn-light" (click)="deleteTrack()" [disabled]="flagDisable">Удалить</button>
 
 
