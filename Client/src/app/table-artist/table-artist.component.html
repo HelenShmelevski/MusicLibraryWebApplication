@@ -2,7 +2,9 @@
   <table class="table table-striped">
     <thead>
     <tr class="color">
+<!--      <th class="fix">Id</th>-->
       <th class="fix">Имя артиста</th>
+      <th class="fix">Жанр</th>
       <th class="fix">Страна</th>
 
     </tr>
@@ -12,6 +14,7 @@
 
 <!--      <td >{{artist.id}}</td>-->
       <td><a (click)="flag=false; getArtist(artist)">{{artist.name}}</a></td>
+      <td>{{artist.genre}}</td>
       <td>{{artist.country}}</td>
     </tr>
     </tbody>
