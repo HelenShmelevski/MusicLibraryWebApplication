@@ -57,7 +57,6 @@ public class TrackService implements ITrackService  {
 
     @Override
     public void addTrack(String title, String album, Date dateRelease, int artistId) {
-        // TODO: Сделать, что если не нашли данного артиста кидать ошибку, трек не добавлять
         Artist artist = artistService.getArtist(artistId);
         TrackDb newTrack = new TrackDb(title, album, dateRelease, new ArtistDb(artist));
         this.trackRepository.saveAndFlush(newTrack);
@@ -65,7 +64,6 @@ public class TrackService implements ITrackService  {
 
     @Override
     public void deleteTrack(int trackId) {
-        // TODO: Сделать, что если нет данного трека в базе, то бросать ошибку
         this.trackRepository.deleteById(trackId);
     }
 

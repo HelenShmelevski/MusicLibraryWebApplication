@@ -1,10 +1,6 @@
 package com.musicLibraryApp.app.dbModels;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.musicLibraryApp.app.dto.Track;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -30,7 +26,6 @@ public class TrackDb implements Serializable {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ARTIST_ID", nullable = false)
-    @JsonIgnore
     private ArtistDb artist;
 
     public TrackDb(String title, String album, Date dateRelease, ArtistDb artist) {

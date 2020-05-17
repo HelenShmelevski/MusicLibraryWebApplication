@@ -18,12 +18,14 @@ import java.util.stream.Collectors;
 @Service
 public class ArtistService implements IArtistService  {
     private final IArtistRepository artistRepository;
+    private final IArtistsGenresService artistsGenresService;
     private final IGenreService genreService;
 
     @Autowired
-    public ArtistService(IArtistRepository artistRepository, IGenreService genreService) {
+    public ArtistService(IArtistRepository artistRepository, IGenreService genreService, IArtistsGenresService artistsGenresService) {
         this.artistRepository = artistRepository;
         this.genreService = genreService;
+        this.artistsGenresService = artistsGenresService;
     }
 
     @Override
@@ -74,6 +76,13 @@ public class ArtistService implements IArtistService  {
 
     @Override
     public void updateArtist(int artistId, Artist newArtist) {
+        Genre genre = newArtist.getGenre();
+        if (genre != null) {
+            artistsGenresService.add(artistId, genre.getId());
+        }
+        else{
+            artistsGenresService.deleteByArtistId(artistId);
+        }
         this.artistRepository
                 .findById(artistId)
                 .map(artistDb -> {

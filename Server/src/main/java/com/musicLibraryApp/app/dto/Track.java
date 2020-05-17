@@ -3,7 +3,6 @@ package com.musicLibraryApp.app.dto;
 import java.util.Date;
 
 public class Track {
-
     private int id;
     private String title;
     private String album;
