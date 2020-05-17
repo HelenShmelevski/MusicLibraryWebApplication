@@ -1,9 +1,9 @@
 package com.musicLibraryApp.app.controllers;
 
+import com.musicLibraryApp.app.services.IGenreService;
 import com.musicLibraryApp.app.wrappers.GenreWrapper;
-import com.musicLibraryApp.app.dbModels.GenreDb;
-import com.musicLibraryApp.app.services.GenreService;
 import com.musicLibraryApp.app.dto.Genre;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,9 +12,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/genres")
 public class GenreController {
-    public final GenreService genreService;
+    public final IGenreService genreService;
 
-    public GenreController(GenreService genreService) {
+    @Autowired
+    public GenreController(IGenreService genreService) {
         this.genreService = genreService;
     }
 
