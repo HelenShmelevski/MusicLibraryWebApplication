@@ -1,14 +1,20 @@
 <div class="wrapper">
   <div class="form-group">
-    <p>Новый жанр</p>
+    <p *ngIf="condition">Новый жанр</p>
+
+    <p *ngIf="!condition">Измените жанр</p>
     <input class="form-control" [(ngModel)]="genre.title" placeholder="Введите название жанра">
 
   </div>
 
 
   <div class="form-group">
-    <button class="btn btn-light" (click)="addGenre(genre)" [disabled]="!flagDisable" [routerLink]="'/genres'">Добавить</button>
-    <button class="btn btn-light" (click)="changeGenre(genre)" [disabled]="flagDisable" [routerLink]="'/genres'">Сохранить изменения</button>
+    <button class="btn btn-light" (click)="addGenre(genre)" [disabled]="!flagDisable" [routerLink]="'/genres'">
+      Добавить
+    </button>
+    <button class="btn btn-light" (click)="changeGenre(genre)" [disabled]="flagDisable" [routerLink]="'/genres'">
+      Сохранить изменения
+    </button>
 
 
   </div>
